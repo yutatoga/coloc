@@ -22,4 +22,5 @@ class testApp : public ofBaseApp{
 	ofImage image1, image2;
 	vector<bool> changeRecordVector;
 	bool drawImageSwitch;
+    int counter;
 };

@@ -1,16 +1,21 @@
 #include "testApp.h"
 
+
+
+
 //--------------------------------------------------------------
 void testApp::setup(){
-	ofSetBackgroundAuto(false);
-	image1.loadImage("toga.jpg");
-	image2.loadImage("monalisa.jpg");
-	//image1とimage2は、同じサイズであることを前提とする
-	for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-		changeRecordVector.push_back(false);
-	}
-	drawImageSwitch = false;
+		ofSetBackgroundAuto(false);
+		image1.loadImage("toga.jpg");
+		image2.loadImage("monalisa.jpg");
+		//image1とimage2は、同じサイズであることを前提とする
+		for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+				changeRecordVector.push_back(false);
+		}
+		drawImageSwitch = false;
     counter = -1;
+		
+		
 }
 
 //--------------------------------------------------------------
@@ -49,18 +54,42 @@ void testApp::draw(){
 //    }
 
     // 左の画像を右の画像に入れ替える
-    int x = counter%(int)image1.getWidth();
-    int y = counter/(int)image1.getWidth();
-    
-    ofColor targetColor = image1.getColor(x, y);
-    image2.setColor(x, y, targetColor);
-    image2.update();
+    ofPoint referencePoint(counter%(int)image1.getWidth(), counter/(int)image1.getWidth());
+    ofColor referenceColor = image1.getColor(referencePoint.x, referencePoint.y);
+		double minimumDistance = image1.getWidth()+image2.getHeight();
+		ofPoint minimumDistancePoint;
+		unsigned char * checkImagePixels = image2.getPixels();
+		for (int i=0; i<image1.getHeight(); i++) {
+				for (int j=0; j<image1.getWidth(); j++) {
+						ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
+																				 checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
+																				 checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
+						double checkDistance = getColorDistance(referenceColor, checkColor);
+						if (checkDistance < minimumDistance) {
+								minimumDistance = checkDistance;
+								minimumDistancePoint = ofPoint(j, i);
+						}
+				}
+		}
+		pointPair tempPointPair;
+		tempPointPair.point1 = referencePoint;
+		tempPointPair.point2 = minimumDistancePoint;
+		pointPairVector.push_back(tempPointPair);
+		
+		image1.setColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y, image2.getColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y));
+		image1.update();
+		
+//		image2.setColor(referencePoint.x, referencePoint.y , targetColor);
+//    image2.update();
     
     image1.draw(ofPoint(100, 100), image1.getWidth(), image1.getHeight());
     image2.draw(ofPoint(520, 100), image2.getWidth(), image2.getHeight());
-
-    
 }
+
+double testApp::getColorDistance(ofColor color1, ofColor color2){
+		return sqrt(double((color1.r-color2.r)*(color1.r-color2.r)+(color1.g-color2.g)*(color1.g-color2.g)+(color1.b-color2.b)*(color1.b-color2.b)));
+}
+
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){

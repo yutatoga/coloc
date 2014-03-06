@@ -2,12 +2,17 @@
 
 #include "ofMain.h"
 
-class testApp : public ofBaseApp{
+struct pointPair{
+		ofPoint point1;
+		ofPoint point2;
+};
 
-	public:
-		void setup();
-		void update();
-		void draw();
+class testApp : public ofBaseApp{
+	
+public:
+	void setup();
+	void update();
+	void draw();
 
 		void keyPressed(int key);
 		void keyReleased(int key);
@@ -18,9 +23,12 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
-	ofImage image1, image2;
-	vector<bool> changeRecordVector;
-	bool drawImageSwitch;
+
+		double getColorDistance(ofColor color1, ofColor color2);
+	
+		ofImage image1, image2;
+		vector<bool> changeRecordVector;
+		bool drawImageSwitch;
     int counter;
+		vector<pointPair> pointPairVector;
 };

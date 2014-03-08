@@ -5,17 +5,17 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-		ofSetBackgroundAuto(false);
-		image1.loadImage("toga.jpg");
-		image2.loadImage("monalisa.jpg");
-		//image1とimage2は、同じサイズであることを前提とする
-		for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-				changeRecordVector.push_back(false);
-		}
-		drawImageSwitch = false;
+    ofBackground(ofColor::black);
+//    ofSetBackgroundAuto(false);
+
+    image1.loadImage("toga.jpg");
+    image2.loadImage("monalisa.jpg");
+    //image1とimage2は、同じサイズであることを前提とする
+    for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+        changeRecordVector.push_back(false);
+    }
+    drawImageSwitch = false;
     counter = -1;
-		
-		
 }
 
 //--------------------------------------------------------------
@@ -82,8 +82,16 @@ void testApp::draw(){
 //		image2.setColor(referencePoint.x, referencePoint.y , targetColor);
 //    image2.update();
     
-    image1.draw(ofPoint(100, 100), image1.getWidth(), image1.getHeight());
-    image2.draw(ofPoint(520, 100), image2.getWidth(), image2.getHeight());
+    image1.draw(ofPoint(ofGetWidth()/4.-image1.getWidth()/2.+100, (ofGetHeight()-image1.getHeight())/2.), image1.getWidth(), image1.getHeight());
+    image2.draw(ofPoint(ofGetWidth()/4.*3-image2.getWidth()/2.-100 , (ofGetHeight()-image2.getHeight())/2.), image2.getWidth(), image2.getHeight());
+    
+    //hightLihgting
+    ofPushStyle();
+    ofSetColor(ofColor::white);
+    ofSetLineWidth(1);
+    ofLine(pointPairVector.back().point1.x+(ofGetWidth()/4.-image1.getWidth()/2.+100), pointPairVector.back().point1.y+((ofGetHeight()-image1.getHeight())/2.),
+           pointPairVector.back().point2.x+(ofGetWidth()/4.*3-image2.getWidth()/2.-100), pointPairVector.back().point2.y+((ofGetHeight()-image2.getHeight())/2.));
+    ofPopStyle();
 }
 
 double testApp::getColorDistance(ofColor color1, ofColor color2){
@@ -98,7 +106,13 @@ void testApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+    switch (key) {
+        case 'f':
+            ofToggleFullscreen();
+            break;
+        default:
+            break;
+    }
 }
 
 //--------------------------------------------------------------
@@ -113,7 +127,7 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------

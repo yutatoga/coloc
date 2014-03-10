@@ -33,7 +33,9 @@ public:
     
     bool enableDuplicate;
     vector<bool> usedOrNotVector;
-		
-		bool enableExchange;
-		
+    
+    bool enableExchange;
+    
+    bool enableRandomExchange;
+    vector<int> exchangeOrderVector;
 };

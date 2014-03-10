@@ -14,11 +14,15 @@ void testApp::setup(){
         usedOrNotVector.push_back(false);
     }
     enableDuplicate = false;
+		enableExchange = true;
+		ofEnableSmoothing();
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    counter++;
+    if (counter <= image1.getWidth()*image1.getHeight()) {
+				counter++;
+		}
 }
 
 //--------------------------------------------------------------
@@ -51,78 +55,94 @@ void testApp::draw(){
     //        }
     //    }
     
-    // 左の画像を右の画像に入れ替える
-    ofPoint referencePoint(counter%(int)image1.getWidth(), counter/(int)image1.getWidth());
-    ofColor referenceColor = image1.getColor(referencePoint.x, referencePoint.y);
-    double minimumDistance = image1.getWidth()+image2.getHeight();
-    ofPoint minimumDistancePoint;
-    unsigned char * checkImagePixels = image2.getPixels();
-    // 最小の距離の色を調べる
-    for (int i=0; i<image1.getHeight(); i++) {
-        for (int j=0; j<image1.getWidth(); j++) {
-            if (!enableDuplicate) {
-                // 重複を許さない
-                if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
-                    ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
-                                                 checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
-                                                 checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
-                    double checkDistance = getColorDistance(referenceColor, checkColor);
-                    if (checkDistance < minimumDistance) {
-                        if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
-                            minimumDistance = checkDistance;
-                            minimumDistancePoint = ofPoint(j, i);
-                        }
-                        // 同じ色の重複を許す
-                        minimumDistance = checkDistance;
-                        minimumDistancePoint = ofPoint(j, i);
-                    }
-                }
-            } else{
-                ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
-                                             checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
-                                             checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
-                double checkDistance = getColorDistance(referenceColor, checkColor);
-                if (checkDistance < minimumDistance) {
-                    if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
-                        minimumDistance = checkDistance;
-                        minimumDistancePoint = ofPoint(j, i);
-                    }
-                    // 同じ色の重複を許す
-                    minimumDistance = checkDistance;
-                    minimumDistancePoint = ofPoint(j, i);
-                }
-            }
-        }
-    }
-    //最も近い距離の色の組み合わせをベクターに保存
-    pointPair tempPointPair;
-    tempPointPair.point1 = referencePoint;
-    tempPointPair.point2 = minimumDistancePoint;
     
-    // 重複を許さない
-    if (!enableDuplicate) {
-        //再利用しないために、使用したPointを保存
-        usedOrNotVector[minimumDistancePoint.y*(int)image2.getWidth()+minimumDistancePoint.x] = true;
-    }
-    pointPairVector.push_back(tempPointPair);
-//    ofLog(OF_LOG_NOTICE, "X:"+ofToString(pointPairVector.back().point2.x)+" Y:"+ofToString(pointPairVector.back().point2.y));
-    
-    image1.setColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y, image2.getColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y));
-    image1.update();
-    
-    //		image2.setColor(referencePoint.x, referencePoint.y , targetColor);
-    //    image2.update();
-    
+		if (counter <= image1.getWidth()*image1.getHeight()) {
+				// 左の画像を右の画像に入れ替える
+				ofPoint referencePoint(counter%(int)image1.getWidth(), counter/(int)image1.getWidth());
+				ofColor referenceColor = image1.getColor(referencePoint.x, referencePoint.y);
+				double minimumDistance = image1.getWidth()+image2.getHeight();
+				ofPoint minimumDistancePoint;
+				unsigned char * checkImagePixels = image2.getPixels();
+				// 最小の距離の色を調べる
+				for (int i=0; i<image1.getHeight(); i++) {
+						for (int j=0; j<image1.getWidth(); j++) {
+								if (!enableDuplicate) {
+										// 重複を許さない
+										if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
+												ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
+																										 checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
+																										 checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
+												double checkDistance = getColorDistance(referenceColor, checkColor);
+												if (checkDistance < minimumDistance) {
+														if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
+																minimumDistance = checkDistance;
+																minimumDistancePoint = ofPoint(j, i);
+														}
+														// 同じ色の重複を許す
+														minimumDistance = checkDistance;
+														minimumDistancePoint = ofPoint(j, i);
+												}
+										}
+								} else{
+										ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
+																								 checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
+																								 checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
+										double checkDistance = getColorDistance(referenceColor, checkColor);
+										if (checkDistance < minimumDistance) {
+												if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
+														minimumDistance = checkDistance;
+														minimumDistancePoint = ofPoint(j, i);
+												}
+												// 同じ色の重複を許す
+												minimumDistance = checkDistance;
+												minimumDistancePoint = ofPoint(j, i);
+										}
+								}
+						}
+				}
+				//最も近い距離の色の組み合わせをベクターに保存
+				pointPair tempPointPair;
+				tempPointPair.point1 = referencePoint;
+				tempPointPair.point2 = minimumDistancePoint;
+				
+				// 重複を許さない
+				if (!enableDuplicate) {
+						//再利用しないために、使用したPointを保存
+						usedOrNotVector[minimumDistancePoint.y*(int)image2.getWidth()+minimumDistancePoint.x] = true;
+				}
+				pointPairVector.push_back(tempPointPair);
+				//    ofLog(OF_LOG_NOTICE, "X:"+ofToString(pointPairVector.back().point2.x)+" Y:"+ofToString(pointPairVector.back().point2.y));
+				
+				// 左の画像の色を入れ替える
+				//　入れ替える前の色を保存
+				ofImage beforeChangeImage1 = image1;
+				ofImage beforeChangeImage2 = image2;
+				image1.setColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y, image2.getColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y));
+				image1.update();
+				
+				// 右の画像の色を入れ替える
+				if (enableExchange) {
+						image2.setColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y, beforeChangeImage1.getColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y));
+						image2.update();
+				}
+				
+				//		image2.setColor(referencePoint.x, referencePoint.y , targetColor);
+				//    image2.update();
+		}
+		
+		// draw image
     image1.draw(ofPoint(ofGetWidth()/4.-image1.getWidth()/2.+100, (ofGetHeight()-image1.getHeight())/2.), image1.getWidth(), image1.getHeight());
     image2.draw(ofPoint(ofGetWidth()/4.*3-image2.getWidth()/2.-100 , (ofGetHeight()-image2.getHeight())/2.), image2.getWidth(), image2.getHeight());
     
     //hightLihgting
-    ofPushStyle();
-    ofSetColor(ofColor::white);
-    ofSetLineWidth(1);
-    ofLine(pointPairVector.back().point1.x+(ofGetWidth()/4.-image1.getWidth()/2.+100), pointPairVector.back().point1.y+((ofGetHeight()-image1.getHeight())/2.),
-           pointPairVector.back().point2.x+(ofGetWidth()/4.*3-image2.getWidth()/2.-100), pointPairVector.back().point2.y+((ofGetHeight()-image2.getHeight())/2.));
-    ofPopStyle();
+    if (counter <= image1.getWidth()*image1.getHeight()) {
+				ofPushStyle();
+				ofSetColor(ofColor::white);
+				ofSetLineWidth(1);
+				ofLine(pointPairVector.back().point1.x+(ofGetWidth()/4.-image1.getWidth()/2.+100), pointPairVector.back().point1.y+((ofGetHeight()-image1.getHeight())/2.),
+							 pointPairVector.back().point2.x+(ofGetWidth()/4.*3-image2.getWidth()/2.-100), pointPairVector.back().point2.y+((ofGetHeight()-image2.getHeight())/2.));
+				ofPopStyle();
+		}
 }
 
 double testApp::getColorDistance(ofColor color1, ofColor color2){
@@ -132,7 +152,7 @@ double testApp::getColorDistance(ofColor color1, ofColor color2){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-	drawImageSwitch = true;
+		drawImageSwitch = true;
 }
 
 //--------------------------------------------------------------

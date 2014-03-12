@@ -3,13 +3,15 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofEnableSmoothing();
-    ofBackground(ofColor::black);
+    ofBackground(ofColor::white);
     //    ofSetBackgroundAuto(false);
     
     //image1とimage2は、同じサイズであることを前提とする
     image1.loadImage("toga.jpg");
     image2.loadImage("monalisa.jpg");
-    
+    originalImage1 = image1;
+		originalImage2 = image2;
+		
     drawImageSwitch = false;
     counter = -1;
     for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
@@ -20,6 +22,7 @@ void testApp::setup(){
     enableDuplicate = false;
     enableExchange = true;
     enableRandomExchange = true;
+		enableMultipixelDrawing = true;
 }
 
 //--------------------------------------------------------------
@@ -97,15 +100,12 @@ void testApp::draw(){
         //    ofLog(OF_LOG_NOTICE, "X:"+ofToString(pointPairVector.back().point2.x)+" Y:"+ofToString(pointPairVector.back().point2.y));
         
         // 左の画像の色を入れ替える
-        //　入れ替える前の色を保存
-        ofImage beforeChangeImage1 = image1;
-        ofImage beforeChangeImage2 = image2;
         image1.setColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y, image2.getColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y));
         image1.update();
         
         // 右の画像の色を入れ替える
         if (enableExchange) {
-            image2.setColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y, beforeChangeImage1.getColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y));
+            image2.setColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y, originalImage1.getColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y));
             image2.update();
         }
     }
@@ -123,6 +123,14 @@ void testApp::draw(){
                pointPairVector.back().point2.x+(ofGetWidth()/4.*3-image2.getWidth()/2.-100), pointPairVector.back().point2.y+((ofGetHeight()-image2.getHeight())/2.));
         ofPopStyle();
     }
+		
+		ofPushStyle();
+				ofSetColor(255, 255, 0, 127);
+				ofCircle(300, 100, 150);
+				ofSetColor(0, 255, 255, 127);
+				ofCircle(100, 100, 150);
+
+		ofPopStyle();
 }
 
 double testApp::getColorDistance(ofColor color1, ofColor color2){
@@ -141,6 +149,42 @@ void testApp::keyReleased(int key){
         case 'f':
             ofToggleFullscreen();
             break;
+				case '0':
+						ofEnableBlendMode(OF_BLENDMODE_DISABLED);
+						break;
+				case '1':
+						ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+						break;
+				case '2':
+						ofEnableBlendMode(OF_BLENDMODE_ADD);
+						break;
+				case '3':
+						ofEnableBlendMode(OF_BLENDMODE_SUBTRACT);
+						break;
+				case '4':
+						ofEnableBlendMode(OF_BLENDMODE_MULTIPLY);
+						break;
+				case '5':
+						ofEnableBlendMode(OF_BLENDMODE_SCREEN);
+						break;
+				case 'a':
+						ofEnableAntiAliasing();
+						break;
+				case 'b':
+						ofBackground(0, 0, 0, 255);
+						break;
+				case 'e':
+						ofEnableAlphaBlending();
+						break;
+				case 'd':
+						ofDisableAlphaBlending();
+						break;
+				case 's':
+						ofDisableAntiAliasing();
+						break;
+				case 'w':
+						ofBackground(255, 255, 255, 255);
+						break;
         default:
             break;
     }

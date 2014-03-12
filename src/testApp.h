@@ -27,6 +27,7 @@ public:
     double getColorDistance(ofColor color1, ofColor color2);
 	
     ofImage image1, image2;
+		ofImage originalImage1, originalImage2;
     bool drawImageSwitch;
     int counter;
     vector<pointPair> pointPairVector;
@@ -38,4 +39,6 @@ public:
     
     bool enableRandomExchange;
     vector<int> exchangeOrderVector;
+		
+		bool enableMultipixelDrawing;
 };

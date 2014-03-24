@@ -41,4 +41,5 @@ public:
     vector<int> exchangeOrderVector;
 		
 		bool enableMultipixelDrawing;
+		bool saveToFile;
 };

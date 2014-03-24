@@ -7,7 +7,7 @@ void testApp::setup(){
     //    ofSetBackgroundAuto(false);
     
     //image1とimage2は、同じサイズであることを前提とする
-    image1.loadImage("sunflowers.jpg");
+    image1.loadImage("toga.jpg");
     image2.loadImage("monalisa.jpg");
     originalImage1 = image1;
 		originalImage2 = image2;
@@ -307,82 +307,43 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-		
-//		vector<pointPair> testPairVector;
-//		pointPair pp;
-//		pp.point1 = ofPoint(1,2);
-//		pp.point2 = ofPoint(10,20);
-//		testPairVector.push_back(pp);
-//		pointPair pp1;
-//		pp1.point1 = ofPoint(3,4);
-//		pp1.point2 = ofPoint(30,40);
-//		testPairVector.push_back(pp1);
-		
-		
-		
-//		int buf[] = { 10,100,1000,10000 };
-//		FILE *file;
-//		file = fopen(ofToDataPath("test.dat").c_str(),"wb");
-//		fwrite(buf,sizeof(buf),1,file);
-//		fclose(file);
-//		
-//		
-//		int buf2[4];
-//		FILE *file2;
-//		
-//		file2 = fopen("test.dat","rb");
-//		fread(buf2,sizeof(int), 4, file2);
-//		fclose(file);
-//		
-//		ofLog(OF_LOG_NOTICE, "out:"+ofToString(buf2[3]));
-//		return 0;
-		
-		//C++ style
-//		fstream file;
-//		file.open(ofToDataPath("foobar_foi.txt").c_str(), ios::out | ios::binary);
-//		if (!file.is_open()) {
-//				return EXIT_FAILURE;
-//		}
-//		int n = 0x41424344;
-//		file.write((const char*)&n, sizeof(n));
-//		file.close();
-//		
+//    exportFile();
+    importFile();
+}
 
-		vector<int> testvector;
-//		testvector.push_back(4);
-//		testvector.push_back(2);
-//		testvector.push_back(7);
-//		testvector.push_back(30);
-//		testvector.push_back(31);
-		
-//		int count = testvector.size();
-//		ofstream out(ofToDataPath("deleteme/foo.dat").c_str(), ios::binary);
-//		if (!out) return 1;
-//		out.write(reinterpret_cast<const char*>(&count), sizeof(count));
-//		out.write(reinterpret_cast<const char*>(&testvector[0]), testvector.size() * sizeof(int));
-//		out.close();
-//
-//		ofLog(OF_LOG_NOTICE, ofToString(testvector.size()));
-		
-		int count = 0;
-		ifstream in(ofToDataPath("deleteme/foo.dat").c_str(), ios::in | ios::binary);
-		if ( !in ) return 1;
-		in.read(reinterpret_cast<char*>(&count), sizeof(count));
-		ofLog(OF_LOG_NOTICE, ofToString(count));
-		testvector.assign(count, 0);
-		in.read(reinterpret_cast<char*>(&testvector[0]), testvector.size() * sizeof(int));
-		in.close();
-		
-		for ( int i = 0; i < testvector.size(); ++i ){
-				cout << testvector[i] << endl;
-		}
+void testApp::exportFile(){
+    vector<unsigned int> testvector;
+    testvector.push_back(4);
+    testvector.push_back(2);
+    testvector.push_back(7);
+    testvector.push_back(30);
+    testvector.push_back(31);
 
+    int count = testvector.size();
+    ofstream out(ofToDataPath("deleteme/foo_"+ofToString(ofGetYear())+"-"+ofToString(ofGetMonth())+"-"+ofToString(ofGetDay())+"_"+ofToString(ofGetHours())+"-"+ofToString(ofGetMinutes())+"-"+ofToString(ofGetSeconds())+".dat").c_str(),ios::out | ios::binary);
+    if (!out) return 1;
+    out.write(reinterpret_cast<const char*>(&count), sizeof(count));// out.write((char *) &count, sizeof(count)); // 最初にサイズを保存
+    out.write(reinterpret_cast<const char*>(&testvector[0]), testvector.size() * sizeof(int));
+    out.close();
+}
 
+void testApp::importFile(){
+    vector<unsigned int> testvector;
+    int count = 0;
+    ifstream in(ofToDataPath("deleteme/foo_2014-3-24_18-32-13.dat").c_str(), ios::in | ios::binary);
+    if ( !in ) return 1;
+    in.read(reinterpret_cast<char*>(&count), sizeof(count)); //countのサイズ分をcountに入れる(一個目のデータがサイズであることが前提)
+    testvector.assign(count, 0); //testvectorをcountの数個だけ、0で初期設定する
+    in.read(reinterpret_cast<char*>(&testvector[0]), testvector.size()*sizeof(int)); //ベクタの最初の位置を指定, intのサイズ分*ベクタの大きさ
+    in.close();
+    for ( int i = 0; i < testvector.size(); ++i ){
+        cout << testvector[i] << endl;
+    }
 }
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-    
+
 }
 
 //--------------------------------------------------------------

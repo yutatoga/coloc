@@ -24,6 +24,9 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
+    void exportFile();
+    void importFile();
+    
     double getColorDistance(ofColor color1, ofColor color2);
 	
     ofImage image1, image2;

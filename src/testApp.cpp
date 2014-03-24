@@ -308,7 +308,8 @@ void testApp::mouseDragged(int x, int y, int button){
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
 //    exportFile();
-    importFile();
+//    importFile();
+    exportFileForStruct();
 }
 
 void testApp::exportFile(){
@@ -324,6 +325,25 @@ void testApp::exportFile(){
     if (!out) return 1;
     out.write(reinterpret_cast<const char*>(&count), sizeof(count));// out.write((char *) &count, sizeof(count)); // 最初にサイズを保存
     out.write(reinterpret_cast<const char*>(&testvector[0]), testvector.size() * sizeof(int));
+    out.close();
+}
+
+void testApp::exportFileForStruct(){
+    vector<pointPair> testPointPairVector;
+    pointPair testPointPair;
+    testPointPair.point1 = ofPoint(3, 1);
+    testPointPair.point2 = ofPoint(4, 8);
+    testPointPairVector.push_back(testPointPair);
+    pointPair testPointPair2;
+    testPointPair2.point1 = ofPoint(2, 3);
+    testPointPair2.point2 = ofPoint(5, 7);
+    testPointPairVector.push_back(testPointPair2);
+    
+    int count = testPointPairVector.size();
+    ofstream out(ofToDataPath("deleteme/foo_"+ofToString(ofGetYear())+"-"+ofToString(ofGetMonth())+"-"+ofToString(ofGetDay())+"_"+ofToString(ofGetHours())+"-"+ofToString(ofGetMinutes())+"-"+ofToString(ofGetSeconds())+".dat").c_str(),ios::out | ios::binary);
+    if (!out) return 1;
+    out.write(reinterpret_cast<const char*>(&count), sizeof(count));
+    out.write(reinterpret_cast<const char*>(&testPointPairVector[0]), testPointPairVector.size() * sizeof(pointPair));
     out.close();
 }
 

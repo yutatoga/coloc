@@ -25,7 +25,10 @@ public:
     void gotMessage(ofMessage msg);
     
     void exportFile();
+    void exportFileForStruct();
     void importFile();
+    
+    
     
     double getColorDistance(ofColor color1, ofColor color2);
 	

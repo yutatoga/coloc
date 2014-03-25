@@ -309,7 +309,8 @@ void testApp::mouseDragged(int x, int y, int button){
 void testApp::mousePressed(int x, int y, int button){
 //    exportFile();
 //    importFile();
-    exportFileForStruct();
+//    exportFileForStruct();
+    importFileForStruct();
 }
 
 void testApp::exportFile(){
@@ -348,7 +349,7 @@ void testApp::exportFileForStruct(){
 }
 
 void testApp::importFile(){
-    vector<unsigned int> testvector;
+    vector<int> testvector;
     int count = 0;
     ifstream in(ofToDataPath("deleteme/foo_2014-3-24_18-32-13.dat").c_str(), ios::in | ios::binary);
     if ( !in ) return 1;
@@ -358,6 +359,26 @@ void testApp::importFile(){
     in.close();
     for ( int i = 0; i < testvector.size(); ++i ){
         cout << testvector[i] << endl;
+    }
+}
+
+void testApp::importFileForStruct(){
+    vector<pointPair> testVector;
+    int count = 0;
+    ifstream in(ofToDataPath("deleteme/foo_2014-3-25_15-12-39.dat").c_str(), ios::in | ios::binary);
+    if ( !in ) return 1;
+    in.read(reinterpret_cast<char*>(&count), sizeof(count));
+    pointPair pp;
+    pp.point1 = ofPoint(0, 0);
+    pp.point2 = ofPoint(0, 0);
+    testVector.assign(count, pp);
+    in.read(reinterpret_cast<char*>(&testVector[0]), testVector.size()*sizeof(pointPair));
+
+
+    in.close();
+    for (int i = 0; i<testVector.size(); i++) {
+        cout << "point1-X:" << testVector[i].point1.x << " Y:"<<testVector[i].point1.y << endl;
+        cout << "point2-X:" << testVector[i].point2.x << " Y:"<<testVector[i].point2.y << endl;
     }
 }
 

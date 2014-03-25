@@ -27,7 +27,7 @@ public:
     void exportFile();
     void exportFileForStruct();
     void importFile();
-    
+    void importFileForStruct();
     
     
     double getColorDistance(ofColor color1, ofColor color2);

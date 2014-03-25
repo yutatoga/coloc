@@ -25,7 +25,7 @@ public:
     void gotMessage(ofMessage msg);
     
     void exportFile();
-    void exportFileForStruct();
+    void exportFileForStruct(vector<pointPair> ppv);
     void importFile();
     void importFileForStruct();
     

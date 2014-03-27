@@ -28,7 +28,10 @@ public:
     void exportFileForStruct(vector<pointPair> ppv);
     void importFile();
     void importFileForStruct(vector<pointPair> *ppv);
-    
+    void setupCurrentPointVector(vector<pointPair> ppv);
+		
+		void moveUpDownLeftRight();
+		
     
     double getColorDistance(ofColor color1, ofColor color2);
 	
@@ -50,4 +53,8 @@ public:
     bool saveToFile;
     
     vector<pointPair> readPointPairVector;
+		
+		int startAnimationFrameNum;
+		bool inAnimation;
+		vector<ofPoint> currentPointVector;
 };

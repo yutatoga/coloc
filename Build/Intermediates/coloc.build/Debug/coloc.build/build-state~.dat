@@ -1,719 +1,0 @@
-Tcoloc
-v6
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Info.plist /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist
-cCompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/MacOS/colocDebug normal i386
-cPhaseScriptExecution Run\ Script /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-cPBXCp /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework bin/colocDebug.app/Contents/Frameworks/GLUT.framework
-cTouch /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
-c000000005285012D00000000000000AA
-t1384448301
-s170
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
-c000000005270E94C000000000000044C
-t1383131468
-s1100
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
-c000000005270E94C00000000000001DB
-t1383131468
-s475
-
-N/System/Library/Frameworks/AGL.framework/AGL
-c0000000050105E6E000000000001A480
-t1343250030
-s107648
-
-N/System/Library/Frameworks/Accelerate.framework/Accelerate
-c000000005235E75000000000000065B0
-t1379264336
-s26032
-
-N/System/Library/Frameworks/AppKit.framework/AppKit
-c00000000524F024500000000023F11C0
-t1380909637
-s37687744
-
-N/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
-c0000000050105D73000000000000BAA0
-t1343249779
-s47776
-
-N/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-c000000005235E75200000000003B2500
-t1379264338
-s3876096
-
-N/System/Library/Frameworks/Carbon.framework/Carbon
-c0000000050105D7900000000000069F0
-t1343249785
-s27120
-
-N/System/Library/Frameworks/Cocoa.framework/Cocoa
-c0000000050105D790000000000006730
-t1343249785
-s26416
-
-N/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-c000000005235E752000000000010BB70
-t1379264338
-s1096560
-
-N/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-c00000000519F442E0000000000656060
-t1369392174
-s6643808
-
-N/System/Library/Frameworks/CoreServices.framework/CoreServices
-c0000000050105D7E000000000000D4F0
-t1343249790
-s54512
-
-N/System/Library/Frameworks/CoreVideo.framework/CoreVideo
-c00000000513E75090000000000081CB0
-t1363047689
-s531632
-
-N/System/Library/Frameworks/IOKit.framework/IOKit
-c000000005235E7550000000000130950
-t1379264341
-s1247568
-
-N/System/Library/Frameworks/OpenGL.framework/OpenGL
-c000000005235E759000000000002DAD0
-t1379264345
-s187088
-
-N/System/Library/Frameworks/QTKit.framework/QTKit
-c000000005235E75A00000000004A2E10
-t1379264346
-s4861456
-
-N/System/Library/Frameworks/QuickTime.framework/QuickTime
-c000000005235E75A0000000000322E20
-t1379264346
-s3288608
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/colocDebug.LinkFileList
-c0000000053170FE70000000000000129
-t1394020327
-s297
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o
-t1394020330
-s265040
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o
-t1394020330
-s261580
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-c0000000053170FE700000000000001A5
-t1394020327
-s421
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app
-t1394020327
-s102
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Frameworks/GLUT.framework
-t1394020342
-s204
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Info.plist
-t1394020327
-s1105
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/MacOS/colocDebug
-t1394020341
-s7809560
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/PkgInfo
-t1394020327
-s8
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist
-c0000000053170E6A00000000000002A5
-t1394019946
-s677
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp
-c0000000053170E6A0000000000000159
-t1394019946
-s345
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp
-c0000000053170FDF000000000000052D
-t1394020319
-s1325
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework
-c0000000052087DC900000000000000CC
-t1376288201
-s204
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework/GLUT
-c0000000052087DC90000000000093570
-t1376288201
-s603504
-
-N/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a
-c0000000052F11B260000000002087FB8
-t1391532838
-s34111416
-
-CBuild AST from /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp
-r0
-
-CBuild AST from /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp
-r0
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies48a9506747c7b841^2992536747c7b841^---0#1#1#--18"Check dependencies36"30E400D0-BB10-4E1A-B69B-B91FBF6D93AC-
-
-CCompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s415713127.384951
-e415713130.912465
-r1
-xCompileC
-xBuild/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/ofMain.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofConstants.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glew/include/GL/glew.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/tess2/include/tesselator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofFileUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/File.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Foundation.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Config.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Platform.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Platform_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Bugcheck.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Types.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Timestamp.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/File_UNIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofLog.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofTypes.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofColor.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofMath.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofPoint.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVec3f.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVec2f.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVec4f.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Mutex.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Exception.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ScopedLock.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Mutex_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofSystemUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofThread.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Thread.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Thread_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Runnable.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SignalHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Event.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Event_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/RefCountedObject.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AtomicCounter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AutoPtr.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofURLFileLoader.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/events/ofEvents.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/events/ofEventUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AbstractEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SingletonHolder.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SharedPtr.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveResult.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveMethod.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveRunnable.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveStarter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ThreadPool.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityStrategy.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/NotificationStrategy.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AbstractPriorityDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AbstractDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityExpire.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/FunctionPriorityDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/events/ofDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Condition.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ScopedUnlock.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Path.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofBaseTypes.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofRectangle.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofMesh.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofGLUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofPixels.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofMatrix4x4.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofQuaternion.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofXml.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Document.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XML.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/AbstractContainerNode.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/AbstractNode.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Node.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/EventTarget.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMObject.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLString.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/NamespaceSupport.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/MutationEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Event.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DocumentEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Element.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/Name.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/NamePool.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AutoReleasePool.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DocumentFragment.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMParser.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/SAXParser.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/XMLReader.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/ParserEngine.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/expat.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/expat_external.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/Locator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/TextEncoding.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMException.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLException.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/SAXException.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLWriter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/ContentHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/LexicalHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/DTDHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/StreamConverter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/UnbufferedStreamBuf.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/StreamUtil.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMWriter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Attr.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Text.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/CharacterData.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NodeIterator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NodeFilter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NamedNodeMap.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/ChildNodesList.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NodeList.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofParameter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofParameterGroup.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Any.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVectorMath.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofMatrix3x3.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/communication/ofSerial.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/communication/ofArduino.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofFbo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofTexture.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofVboMesh.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofVbo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofGLRenderer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofPolyline.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofGraphics.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofMatrixStack.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofLight.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofNode.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/of3dUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/of3dGraphics.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/of3dPrimitives.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofMaterial.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofShader.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/app/ofAppBaseWindow.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofGLProgrammableRenderer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofCairoRenderer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-features.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-pdf.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-version.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-deprecated.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-svg.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofPath.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofTessellator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofImage.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofRendererCollection.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofTrueTypeFont.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/app/ofBaseApp.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/app/ofAppRunner.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofSoundStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofBaseSoundStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofRtAudioSoundStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofSoundPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofBaseSoundPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofFmodSoundPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_codec.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_dsp.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_memoryinfo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_errors.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofVideoGrabber.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofQTKitGrabber.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofVideoPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofQTKitPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofCamera.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofEasyCam.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.h
-oclang: warning: -lpthread: 'linker' input unused
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp158"CompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compilerb9a8626747c7b841^fa9ae96a47c7b841^-49"clang: warning: -lpthread: 'linker' input unused-0#0#1#-19%DVTDocumentLocation2@98"file://localhost/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp0000000000000000^3360"CompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Wno-invalid-offsetof -mmacosx-version-min=10.6 -g -mssse3 -Wno-sign-conversion -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/colocDebug.hmap -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../libs/glfw/include -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/DerivedSources/i386 -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/DerivedSources -F/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin -F/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -MMD -MT dependencies -MF /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.dia -c /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/main.cpp -o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o36"E6BA6E93-FD5E-4951-A665-BD453217AC44-
-bEEE12CD3-D38C-4E03-A4E4-DF1CE2A15BBB
-
-CCompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s415713127.384952
-e415713130.912489
-r1
-xCompileC
-xBuild/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/ofMain.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofConstants.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glew/include/GL/glew.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/tess2/include/tesselator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofFileUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/File.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Foundation.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Config.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Platform.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Platform_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Bugcheck.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Types.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Timestamp.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/File_UNIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofLog.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofTypes.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofColor.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofMath.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofPoint.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVec3f.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVec2f.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVec4f.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Mutex.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Exception.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ScopedLock.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Mutex_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofSystemUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofThread.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Thread.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Thread_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Runnable.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SignalHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Event.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Event_POSIX.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/RefCountedObject.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AtomicCounter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AutoPtr.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofURLFileLoader.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/events/ofEvents.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/events/ofEventUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AbstractEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SingletonHolder.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SharedPtr.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveResult.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveMethod.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveRunnable.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ActiveStarter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ThreadPool.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityStrategy.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/NotificationStrategy.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AbstractPriorityDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AbstractDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/PriorityExpire.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/FunctionPriorityDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/events/ofDelegate.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Condition.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/ScopedUnlock.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Path.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofBaseTypes.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofRectangle.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofMesh.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofGLUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofPixels.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofMatrix4x4.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofQuaternion.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofXml.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Document.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XML.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/AbstractContainerNode.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/AbstractNode.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Node.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/EventTarget.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMObject.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLString.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/NamespaceSupport.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/MutationEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Event.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DocumentEvent.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Element.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/Name.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/NamePool.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/AutoReleasePool.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DocumentFragment.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMParser.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/SAXParser.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/XMLReader.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/ParserEngine.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/expat.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/expat_external.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/Locator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/TextEncoding.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMException.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLException.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/SAXException.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/XML/XMLWriter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/ContentHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/LexicalHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/SAX/DTDHandler.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/StreamConverter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/UnbufferedStreamBuf.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/StreamUtil.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/DOMWriter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Attr.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/Text.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/CharacterData.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NodeIterator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NodeFilter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NamedNodeMap.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/ChildNodesList.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/DOM/NodeList.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofParameter.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/types/ofParameterGroup.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/include/Poco/Any.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofVectorMath.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/math/ofMatrix3x3.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/communication/ofSerial.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/communication/ofArduino.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofFbo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofTexture.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofVboMesh.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofVbo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofGLRenderer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofPolyline.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofGraphics.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/utils/ofMatrixStack.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofLight.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofNode.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/of3dUtils.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/of3dGraphics.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/of3dPrimitives.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofMaterial.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofShader.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/app/ofAppBaseWindow.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/gl/ofGLProgrammableRenderer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofCairoRenderer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-features.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-pdf.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-version.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-deprecated.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/include/cairo/cairo-svg.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofPath.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofTessellator.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofImage.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofRendererCollection.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/graphics/ofTrueTypeFont.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/app/ofBaseApp.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/app/ofAppRunner.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofSoundStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofBaseSoundStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofRtAudioSoundStream.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofSoundPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofBaseSoundPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/sound/ofFmodSoundPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_codec.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_dsp.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_memoryinfo.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/include/fmod_errors.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofVideoGrabber.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofQTKitGrabber.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofVideoPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/video/ofQTKitPlayer.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofCamera.h
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworks/3d/ofEasyCam.h
-oclang: warning: -lpthread: 'linker' input unused
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp164"CompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compilerf8a9626747c7b841^aa9de96a47c7b841^-49"clang: warning: -lpthread: 'linker' input unused-0#0#1#-19%DVTDocumentLocation2@101"file://localhost/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp0000000000000000^3378"CompileC Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Wno-invalid-offsetof -mmacosx-version-min=10.6 -g -mssse3 -Wno-sign-conversion -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/colocDebug.hmap -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../libs/glfw/include -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/DerivedSources/i386 -I/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/DerivedSources -F/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin -F/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -MMD -MT dependencies -MF /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.d --serialize-diagnostics /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.dia -c /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/src/testApp.cpp -o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o36"02F0C5EC-39C7-42F3-BD09-4879B3D258B8-
-bEEE12CD3-D38C-4E03-A4E4-DF1CE2A15BBB
-
-CLd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/MacOS/colocDebug normal i386
-s415713131.003762
-e415713141.470232
-r1
-xLd
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/MacOS/colocDebug
-xnormal
-xi386
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/colocDebug.LinkFileList
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/crt1.10.6.o
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/main.o
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/testApp.o
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoCrypto.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoData.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoDataODBC.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoDataSQLite.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoFoundation.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoNet.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoNetSSL.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoUtil.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoXML.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/poco/lib/osx/PocoZip.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/tess2/lib/osx/tess2.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glew/lib/osx/glew.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/lib/osx/cairo-script-interpreter.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/lib/osx/cairo.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/cairo/lib/osx/pixman-1.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/fmodex/lib/osx/libfmodex.dylib
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/rtAudio/lib/osx/rtAudio.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openssl/lib/osx/crypto.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openssl/lib/osx/ssl.a
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glfw/lib/osx/libglfw3.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Accelerate
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QTKit.framework/QTKit
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework/GLUT
-d/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/AGL
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Carbon
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QuickTime.framework/QuickTime
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libstdc++.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
-d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.eprintf.a
-d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.osx.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AudioUnit.framework/AudioUnit
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libgcc_s.1.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.A.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Link /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/MacOS/colocDebug59"Ld bin/colocDebug.app/Contents/MacOS/colocDebug normal i386c408016b47c7b841^8461787547c7b841^---0#0#1#--2415"Ld bin/colocDebug.app/Contents/MacOS/colocDebug normal i386    cd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin -F/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin -F/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/../../../libs/glut/lib/osx -filelist /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/colocDebug.LinkFileList -mmacosx-version-min=10.6 -dead_strip ../../../libs/poco/lib/osx/PocoCrypto.a ../../../libs/poco/lib/osx/PocoData.a ../../../libs/poco/lib/osx/PocoDataODBC.a ../../../libs/poco/lib/osx/PocoDataSQLite.a ../../../libs/poco/lib/osx/PocoFoundation.a ../../../libs/poco/lib/osx/PocoNet.a ../../../libs/poco/lib/osx/PocoNetSSL.a ../../../libs/poco/lib/osx/PocoUtil.a ../../../libs/poco/lib/osx/PocoXML.a ../../../libs/poco/lib/osx/PocoZip.a ../../../libs/tess2/lib/osx/tess2.a ../../../libs/glew/lib/osx/glew.a ../../../libs/cairo/lib/osx/cairo-script-interpreter.a ../../../libs/cairo/lib/osx/cairo.a ../../../libs/cairo/lib/osx/pixman-1.a ../../../libs/fmodex/lib/osx/libfmodex.dylib ../../../libs/rtAudio/lib/osx/rtAudio.a ../../../libs/openssl/lib/osx/crypto.a ../../../libs/openssl/lib/osx/ssl.a ../../../libs/glfw/lib/osx/libglfw3.a -framework Accelerate -framework QTKit -framework GLUT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a -framework AGL -framework ApplicationServices -framework AudioToolbox -framework Carbon -framework CoreAudio -framework CoreFoundation -framework CoreServices -framework OpenGL -framework QuickTime -framework AppKit -framework Cocoa -framework IOKit -framework CoreVideo -Xlinker -dependency_info -Xlinker /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/colocDebug_dependency_info.dat -o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/MacOS/colocDebug36"C37165D6-BBB2-49AC-A9CF-C59E9CD108CD-
-bEEE12CD3-D38C-4E03-A4E4-DF1CE2A15BBB
-
-CPBXCp /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework bin/colocDebug.app/Contents/Frameworks/GLUT.framework
-s415713141.994416
-e415713142.416300
-r1
-xPBXCp
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework
-xbin/colocDebug.app/Contents/Frameworks/GLUT.framework
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy bin/colocDebug.app/Contents/Frameworks/GLUT.framework144"PBXCp /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework bin/colocDebug.app/Contents/Frameworks/GLUT.frameworka9a4fe7547c7b841^9a946a7647c7b841^---0#0#1#-19%DVTDocumentLocation2@139"file://localhost/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Frameworks/GLUT.framework003834b7dcffdf42^528"PBXCp /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework bin/colocDebug.app/Contents/Frameworks/GLUT.framework    cd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/libs/glut/lib/osx/GLUT.framework /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Frameworks36"333C17D1-F100-4FA6-9B1E-742E33015BCF-
-bEEE12CD3-D38C-4E03-A4E4-DF1CE2A15BBB
-
-CPhaseScriptExecution Run\ Script /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-s415713141.479758
-e415713141.986137
-r1
-xPhaseScriptExecution
-xRun Script
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'117"PhaseScriptExecution Run\ Script Build/Intermediates/coloc.build/Debug/coloc.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh87dd7b7547c7b841^fb74fc7547c7b841^---0#0#1#--27177"PhaseScriptExecution Run\ Script Build/Intermediates/coloc.build/Debug/coloc.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh    cd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER gentleman    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv ALWAYS_USE_SEPARATE_HEADERMAPS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv ARCHS_STANDARD_INCLUDING_64_BIT x86_64    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Products    setenv BUILD_ROOT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Products    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin    setenv CACHE_ROOT /var/folders/sz/168zl6bx1r39tt0yj54sf2x40000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode    setenv CCHROOT /var/folders/sz/168zl6bx1r39tt0yj54sf2x40000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app    setenv CODE_SIGNING_ALLOWED YES    setenv COLOR_DIAGNOSTICS NO    setenv COMBINE_HIDPI_IMAGES YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/sz/168zl6bx1r39tt0yj54sf2x40000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin    setenv CONFIGURATION_TEMP_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug    setenv CONTENTS_FOLDER_PATH colocDebug.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CREATE_INFOPLIST_SECTION_IN_BINARY NO    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING YES    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEFAULT_KEXT_INSTALL_PATH /Library/Extensions    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH colocDebug.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/coloc.dst    setenv DT_TOOLCHAIN_DIR /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    setenv DWARF_DSYM_FILE_NAME colocDebug.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin    setenv EMBEDDED_PROFILE_NAME embedded.provisionprofile    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH colocDebug.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH colocDebug.app/Contents/MacOS    setenv EXECUTABLE_NAME colocDebug    setenv EXECUTABLE_PATH colocDebug.app/Contents/MacOS/colocDebug    setenv FILE_LIST /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH colocDebug.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin  \"/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/../../../libs/glut/lib/osx\""    setenv FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/../../../libs/glut/lib/osx\""    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME colocDebug.app    setenv GCC3_VERSION 3.3    setenv GCC_AUTO_VECTORIZATION YES    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_ENABLE_SSE3_EXTENSIONS YES    setenv GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_MODEL_TUNING NONE    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0    setenv GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS YES    setenv GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO NO    setenv GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL NO    setenv GCC_WARN_UNINITIALIZED_AUTOS NO    setenv GCC_WARN_UNUSED_VALUE NO    setenv GCC_WARN_UNUSED_VARIABLE NO    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_CAIRO "\"../../../libs/cairo/include/cairo\""    setenv HEADER_FMODEX "\"../../../libs/fmodex/include\""    setenv HEADER_FREEIMAGE "\"../../../libs/FreeImage/include\""    setenv HEADER_FREETYPE "\"../../../libs/freetype/include\""    setenv HEADER_FREETYPE2 "\"../../../libs/freetype/include/freetype2\""    setenv HEADER_GLEW "\"../../../libs/glew/include\""    setenv HEADER_GLFW "\"../../../libs/glfw/include\""    setenv HEADER_OF "\"../../../libs/openFrameworks/**\""    setenv HEADER_POCO "\"../../../libs/poco/include\""    setenv HEADER_RTAUDIO "\"../../../libs/rtAudio/include\""    setenv HEADER_SEARCH_PATHS "/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/include \"../../../libs/openFrameworks/**\" \"../../../libs/poco/include\" \"../../../libs/freetype/include\" \"../../../libs/freetype/include/freetype2\" \"../../../libs/fmodex/include\" \"../../../libs/glew/include\" \"../../../libs/FreeImage/include\" \"../../../libs/tess2/include\" \"../../../libs/cairo/include/cairo\" \"../../../libs/rtAudio/include\" \"../../../libs/glfw/include\""    setenv HEADER_TESS2 "\"../../../libs/tess2/include\""    setenv ICON icon-debug.icns    setenv ICONV /usr/bin/iconv    setenv ICON_FILE ../../../libs/openFrameworksCompiled/project/osx/icon-debug.icns    setenv ICON_FILE_PATH ../../../libs/openFrameworksCompiled/project/osx/    setenv ICON_NAME_DEBUG icon-debug.icns    setenv ICON_NAME_RELEASE icon.icns    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE openFrameworks-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH colocDebug.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH colocDebug.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/coloc.dst/Users/gentleman/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER gentleman    setenv INSTALL_PATH /Users/gentleman/Applications    setenv INSTALL_ROOT /tmp/coloc.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH colocDebug.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DEPENDENCY_INFO_FILE /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/colocDebug_dependency_info.dat    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/colocDebug-LinkMap-normal-i386.txt    setenv LD_NO_PIE NO    setenv LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER YES    setenv LEGACY_DEVELOPER_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_KEXT_INSTALL_PATH /Library/Extensions    setenv LIBRARY_SEARCH_PATHS "/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin                                                              "    setenv LIB_CAIRO1 "\"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\""    setenv LIB_CAIRO2 "\"../../../libs/cairo/lib/osx/cairo.a\""    setenv LIB_CAIRO3 "\"../../../libs/cairo/lib/osx/pixman-1.a\""    setenv LIB_FMODEX "\"../../../libs/fmodex/lib/osx/libfmodex.dylib\""    setenv LIB_FREEIMAGE "\"../../../libs/FreeImage/lib/osx/freeimage.a\""    setenv LIB_FREETYPE "\"../../../libs/freetype/lib/osx/freetype.a\""    setenv LIB_GLEW "\"../../../libs/glew/lib/osx/glew.a\""    setenv LIB_GLFW "\"../../../libs/glfw/lib/osx/libglfw3.a\""    setenv LIB_GLUT "\"../../../libs/glut/lib/osx/GLUT.framework/Versions/A/GLUT\""    setenv LIB_OPENSSL1 "\"../../../libs/openssl/lib/osx/crypto.a\""    setenv LIB_OPENSSL2 "\"../../../libs/openssl/lib/osx/ssl.a\""    setenv LIB_POCO_1 "\"../../../libs/poco/lib/osx/PocoCrypto.a\""    setenv LIB_POCO_10 "\"../../../libs/poco/lib/osx/PocoZip.a\""    setenv LIB_POCO_2 "\"../../../libs/poco/lib/osx/PocoData.a\""    setenv LIB_POCO_3 "\"../../../libs/poco/lib/osx/PocoDataODBC.a\""    setenv LIB_POCO_4 "\"../../../libs/poco/lib/osx/PocoDataSQLite.a\""    setenv LIB_POCO_5 "\"../../../libs/poco/lib/osx/PocoFoundation.a\""    setenv LIB_POCO_6 "\"../../../libs/poco/lib/osx/PocoNet.a\""    setenv LIB_POCO_7 "\"../../../libs/poco/lib/osx/PocoNetSSL.a\""    setenv LIB_POCO_8 "\"../../../libs/poco/lib/osx/PocoUtil.a\""    setenv LIB_POCO_9 "\"../../../libs/poco/lib/osx/PocoXML.a\""    setenv LIB_RTAUDIO "\"../../../libs/rtAudio/lib/osx/rtAudio.a\""    setenv LIB_TESS "\"../../../libs/tess2/lib/osx/tess2.a\""    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal/i386/colocDebug.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH colocDebug.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 12F45    setenv MAC_OS_X_VERSION_ACTUAL 1085    setenv MAC_OS_X_VERSION_MAJOR 1080    setenv MAC_OS_X_VERSION_MINOR 0805    setenv MODULE_CACHE_DIR /Users/gentleman/Library/Developer/Xcode/DerivedData/ModuleCache    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Objects-normal    setenv OBJROOT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates    setenv OF_CORE_HEADERS "\"../../../libs/openFrameworks/**\" \"../../../libs/poco/include\" \"../../../libs/freetype/include\" \"../../../libs/freetype/include/freetype2\" \"../../../libs/fmodex/include\" \"../../../libs/glew/include\" \"../../../libs/FreeImage/include\" \"../../../libs/tess2/include\" \"../../../libs/cairo/include/cairo\" \"../../../libs/rtAudio/include\" \"../../../libs/glfw/include\""    setenv OF_CORE_LIBS "\"../../../libs/poco/lib/osx/PocoCrypto.a\" \"../../../libs/poco/lib/osx/PocoData.a\" \"../../../libs/poco/lib/osx/PocoDataODBC.a\" \"../../../libs/poco/lib/osx/PocoDataSQLite.a\" \"../../../libs/poco/lib/osx/PocoFoundation.a\" \"../../../libs/poco/lib/osx/PocoNet.a\" \"../../../libs/poco/lib/osx/PocoNetSSL.a\" \"../../../libs/poco/lib/osx/PocoUtil.a\" \"../../../libs/poco/lib/osx/PocoXML.a\" \"../../../libs/poco/lib/osx/PocoZip.a\" \"../../../libs/tess2/lib/osx/tess2.a\" \"../../../libs/glew/lib/osx/glew.a\" \"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\" \"../../../libs/cairo/lib/osx/cairo.a\" \"../../../libs/cairo/lib/osx/pixman-1.a\" \"../../../libs/fmodex/lib/osx/libfmodex.dylib\" \"../../../libs/rtAudio/lib/osx/rtAudio.a\" \"../../../libs/openssl/lib/osx/crypto.a\" \"../../../libs/openssl/lib/osx/ssl.a\" \"../../../libs/glfw/lib/osx/libglfw3.a\""    setenv OF_PATH ../../..    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CPLUSPLUSFLAGS "-D__MACOSX_CORE__ -lpthread -mtune=native"    setenv OTHER_LDFLAGS "\"../../../libs/poco/lib/osx/PocoCrypto.a\" \"../../../libs/poco/lib/osx/PocoData.a\" \"../../../libs/poco/lib/osx/PocoDataODBC.a\" \"../../../libs/poco/lib/osx/PocoDataSQLite.a\" \"../../../libs/poco/lib/osx/PocoFoundation.a\" \"../../../libs/poco/lib/osx/PocoNet.a\" \"../../../libs/poco/lib/osx/PocoNetSSL.a\" \"../../../libs/poco/lib/osx/PocoUtil.a\" \"../../../libs/poco/lib/osx/PocoXML.a\" \"../../../libs/poco/lib/osx/PocoZip.a\" \"../../../libs/tess2/lib/osx/tess2.a\" \"../../../libs/glew/lib/osx/glew.a\" \"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\" \"../../../libs/cairo/lib/osx/cairo.a\" \"../../../libs/cairo/lib/osx/pixman-1.a\" \"../../../libs/fmodex/lib/osx/libfmodex.dylib\" \"../../../libs/rtAudio/lib/osx/rtAudio.a\" \"../../../libs/openssl/lib/osx/crypto.a\" \"../../../libs/openssl/lib/osx/ssl.a\" \"../../../libs/glfw/lib/osx/libglfw3.a\""    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH colocDebug.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/PkgInfo    setenv PKGINFO_PATH colocDebug.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv PLATFORM_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform    setenv PLATFORM_NAME macosx    setenv PLATFORM_PREFERRED_ARCH x86_64    setenv PLATFORM_PRODUCT_BUILD_VERSION 5A3005    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH colocDebug.app/Contents/PlugIns    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH colocDebug.app/Contents/PrivateHeaders    setenv PRODUCT_NAME colocDebug    setenv PRODUCT_SETTINGS_PATH /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT coloc    setenv PROJECT_DERIVED_FILE_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/DerivedSources    setenv PROJECT_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    setenv PROJECT_FILE_PATH /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/coloc.xcodeproj    setenv PROJECT_NAME coloc    setenv PROJECT_TEMP_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build    setenv PROJECT_TEMP_ROOT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates    setenv PUBLIC_HEADERS_FOLDER_PATH colocDebug.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin "    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH colocDebug.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk    setenv SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk    setenv SDK_NAME macosx10.9    setenv SDK_PRODUCT_BUILD_VERSION 13A595    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH colocDebug.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/PrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH colocDebug.app/Contents/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    setenv SRCROOT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_PLATFORMS macosx    setenv SYMROOT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Products    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Applications/Xcode.app/Contents/Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Applications/Xcode.app/Contents/Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_KEXT_INSTALL_PATH /System/Library/Extensions    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME coloc    setenv TARGET_BUILD_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin    setenv TARGET_NAME coloc    setenv TARGET_TEMP_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build    setenv TEMP_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build    setenv TEMP_FILES_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build    setenv TEMP_FILE_DIR /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build    setenv TEMP_ROOT /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH colocDebug.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER gentleman    setenv USER_APPS_DIR /Users/gentleman/Applications    setenv USER_LIBRARY_DIR /Users/gentleman/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH colocDebug.app/Contents/version.plist    setenv VERSION_INFO_BUILDER gentleman    setenv VERSION_INFO_FILE colocDebug_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:colocDebug  PROJECT:coloc-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME colocDebug.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Applications/Xcode.app/Contents/Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 5A3005    setenv XCODE_VERSION_ACTUAL 0502    setenv XCODE_VERSION_MAJOR 0500    setenv XCODE_VERSION_MINOR 0500    setenv XPCSERVICES_FOLDER_PATH colocDebug.app/Contents/XPCServices    setenv YACC yacc    setenv arch i386    setenv variant normal    /bin/sh -c /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/Build/Intermediates/coloc.build/Debug/coloc.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh36"EB5132FF-C736-41C9-AFA2-FA5569C274EA-
-bEEE12CD3-D38C-4E03-A4E4-DF1CE2A15BBB
-
-CProcessInfoPlistFile /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Info.plist /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist
-s415713127.318323
-e415713127.376516
-r1
-xProcessInfoPlistFile
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Info.plist
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Process /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist85"ProcessInfoPlistFile bin/colocDebug.app/Contents/Info.plist openFrameworks-Info.plist57975f6747c7b841^bf63606747c7b841^---0#0#1#-19%DVTDocumentLocation2@111"file://localhost/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist0000000000000000^556"ProcessInfoPlistFile bin/colocDebug.app/Contents/Info.plist openFrameworks-Info.plist    cd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    builtin-infoPlistUtility /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/openFrameworks-Info.plist -genpkginfo /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app/Contents/Info.plist36"ED327672-9652-427C-90DA-6F3B46C29477-
-bEEE12CD3-D38C-4E03-A4E4-DF1CE2A15BBB
-
-CTouch /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app
-s415713142.425137
-e415713142.497199
-r1
-xTouch
-x/Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Touch /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app24"Touch bin/colocDebug.app3ae66c7647c7b841^b2487f7647c7b841^---0#0#1#--213"Touch bin/colocDebug.app    cd /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc    /usr/bin/touch -c /Users/gentleman/Developer/oF/of_v0.8.0_osx_release/apps/myApps/coloc/bin/colocDebug.app36"1874144F-9AE6-49E2-BE4D-13D8C8058920-
-bEEE12CD3-D38C-4E03-A4E4-DF1CE2A15BBB
-

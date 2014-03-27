@@ -132,14 +132,6 @@ void testApp::draw(){
             ofPopStyle();
         }
         
-        //		ofPushStyle();
-        //				ofSetColor(255, 255, 0, 127);
-        //				ofCircle(300, 100, 150);
-        //				ofSetColor(0, 255, 255, 127);
-        //				ofCircle(100, 100, 150);
-        //
-        //		ofPopStyle();
-        
     }
 }
 
@@ -191,7 +183,7 @@ void testApp::keyReleased(int key){
             break;
         case 'r':
             //read file
-            readPointPairVector=importFileForStruct(readPointPairVector);
+            importFileForStruct(&readPointPairVector);
             ofLog(OF_LOG_NOTICE, "CHECK:"+ofToString(readPointPairVector.size()));
             for (int i=0; i<image1.getHeight(); i++) {
                 for (int j=0; j<image1.getWidth(); j++) {
@@ -307,9 +299,7 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-    //    exportFile();
-    //    importFile();
-    //    exportFileForStruct();
+
 }
 
 void testApp::exportFile(){
@@ -351,8 +341,8 @@ void testApp::importFile(){
     }
 }
 
-vector<pointPair> testApp::importFileForStruct(vector<pointPair> ppv){
-    ppv.clear();
+void testApp::importFileForStruct(vector<pointPair> *ppv){
+    ppv->clear();
     int count = 0;
     ifstream in(ofToDataPath("deleteme/foo_2014-3-25_17-50-2.dat").c_str(), ios::in | ios::binary);
     if ( !in ) return ppv;
@@ -360,16 +350,10 @@ vector<pointPair> testApp::importFileForStruct(vector<pointPair> ppv){
     pointPair pp;
     pp.point1 = ofPoint(0, 0);
     pp.point2 = ofPoint(0, 0);
-    ppv.assign(count, pp);
-    in.read(reinterpret_cast<char*>(&ppv[0]), ppv.size()*sizeof(pointPair));
-    ofLog(OF_LOG_NOTICE, "reading done!"+ofToString(ppv.size()));
-    
+    ppv->assign(count, pp);
+    in.read(reinterpret_cast<char*>(&ppv->front()), ppv->size()*sizeof(pointPair));
+    ofLog(OF_LOG_NOTICE, "reading done!"+ofToString(ppv->size()));
     in.close();
-//    for (int i = 0; i<ppv.size(); i++) {
-//        cout << "point1-X:" << ppv[i].point1.x << " Y:"<<ppv[i].point1.y << endl;
-//        cout << "point2-X:" << ppv[i].point2.x << " Y:"<<ppv[i].point2.y << endl;
-//    }
-    return ppv;
 }
 
 //--------------------------------------------------------------

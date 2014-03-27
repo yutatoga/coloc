@@ -27,7 +27,7 @@ public:
     void exportFile();
     void exportFileForStruct(vector<pointPair> ppv);
     void importFile();
-    vector<pointPair> importFileForStruct(vector<pointPair> ppv);
+    void importFileForStruct(vector<pointPair> *ppv);
     
     
     double getColorDistance(ofColor color1, ofColor color2);

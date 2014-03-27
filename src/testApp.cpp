@@ -191,7 +191,16 @@ void testApp::keyReleased(int key){
             break;
         case 'r':
             //read file
-            importFileForStruct();
+            readPointPairVector=importFileForStruct(readPointPairVector);
+            ofLog(OF_LOG_NOTICE, "CHECK:"+ofToString(readPointPairVector.size()));
+            for (int i=0; i<image1.getHeight(); i++) {
+                for (int j=0; j<image1.getWidth(); j++) {
+                    image1.setColor(readPointPairVector[i*(int)image1.getWidth()+j].point1.x,
+                                    readPointPairVector[i*(int)image1.getWidth()+j].point1.y,
+                                    image2.getColor(readPointPairVector[i*(int)image1.getWidth()+j].point2.x,
+                                                    readPointPairVector[i*(int)image1.getWidth()+j].point2.y));
+                }
+            }
             break;
         case 's':
             ofDisableAntiAliasing();
@@ -342,24 +351,25 @@ void testApp::importFile(){
     }
 }
 
-void testApp::importFileForStruct(){
-    vector<pointPair> testVector;
+vector<pointPair> testApp::importFileForStruct(vector<pointPair> ppv){
+    ppv.clear();
     int count = 0;
     ifstream in(ofToDataPath("deleteme/foo_2014-3-25_17-50-2.dat").c_str(), ios::in | ios::binary);
-    if ( !in ) return 1;
+    if ( !in ) return ppv;
     in.read(reinterpret_cast<char*>(&count), sizeof(count));
     pointPair pp;
     pp.point1 = ofPoint(0, 0);
     pp.point2 = ofPoint(0, 0);
-    testVector.assign(count, pp);
-    in.read(reinterpret_cast<char*>(&testVector[0]), testVector.size()*sizeof(pointPair));
-    ofLog(OF_LOG_NOTICE, "reading done!");
+    ppv.assign(count, pp);
+    in.read(reinterpret_cast<char*>(&ppv[0]), ppv.size()*sizeof(pointPair));
+    ofLog(OF_LOG_NOTICE, "reading done!"+ofToString(ppv.size()));
     
     in.close();
-    for (int i = 0; i<testVector.size(); i++) {
-        cout << "point1-X:" << testVector[i].point1.x << " Y:"<<testVector[i].point1.y << endl;
-        cout << "point2-X:" << testVector[i].point2.x << " Y:"<<testVector[i].point2.y << endl;
-    }
+//    for (int i = 0; i<ppv.size(); i++) {
+//        cout << "point1-X:" << ppv[i].point1.x << " Y:"<<ppv[i].point1.y << endl;
+//        cout << "point2-X:" << ppv[i].point2.x << " Y:"<<ppv[i].point2.y << endl;
+//    }
+    return ppv;
 }
 
 //--------------------------------------------------------------

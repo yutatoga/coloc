@@ -54,6 +54,7 @@ public:
     
     vector<pointPair> readPointPairVector;
 		
+		// アニメーション用
 		int startAnimationFrameNum;
 		bool inAnimation;
 		vector<ofPoint> currentPointVector;

@@ -1,1 +1,6 @@
 .DS_Store
+coloc.xcodeproj/project.xcworkspace/xcshareddata
+bin/data
+coloc.xcodeproj/project.xcworkspace/xcuserdata
+bin
+Build

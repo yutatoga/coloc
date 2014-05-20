@@ -615,7 +615,7 @@ void testApp::exportFileForStruct(vector<pointPair> ppv){
 void testApp::importFile(){
     vector<int> testvector;
     int count = 0;
-    ifstream in(ofToDataPath("deleteme/foo_2014-05-21-00-25-47-197.dat").c_str(), ios::in | ios::binary);
+    ifstream in(ofToDataPath("deleteme/foo_2014-05-21-01-38-46-575.dat").c_str(), ios::in | ios::binary);
     if ( !in ) return 1;
     in.read(reinterpret_cast<char*>(&count), sizeof(count)); //countのサイズ分をcountに入れる(一個目のデータがサイズであることが前提)
     testvector.assign(count, 0); //testvectorをcountの数個だけ、0で初期設定する
@@ -629,7 +629,7 @@ void testApp::importFile(){
 void testApp::importFileForStruct(vector<pointPair> *ppv){
     ppv->clear();
     int count = 0;
-    ifstream in(ofToDataPath("deleteme/foo_2014-05-21-00-25-47-197.dat").c_str(), ios::in | ios::binary);
+    ifstream in(ofToDataPath("deleteme/foo_2014-05-21-01-38-46-575.dat").c_str(), ios::in | ios::binary);
     if ( !in ) return ppv;
     in.read(reinterpret_cast<char*>(&count), sizeof(count));
     pointPair pp;

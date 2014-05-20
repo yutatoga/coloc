@@ -7,8 +7,8 @@ void testApp::setup(){
     //    ofSetBackgroundAuto(false);
     
     //image1とimage2は、同じサイズであることを前提とする
-    image1.loadImage("toga_debug2.jpg");
-    image2.loadImage("monalisa_debug2.jpg");
+    image1.loadImage("otaniOniji.jpg");
+    image2.loadImage("monalisa.jpg");
     originalImage1 = image1;
     originalImage2 = image2;
     
@@ -22,7 +22,7 @@ void testApp::setup(){
     random_shuffle(exchangeOrderVector.begin(), exchangeOrderVector.end());
     enableDuplicate = false;
     enableExchange = true;
-    enableRandomExchange = false;
+    enableRandomExchange = true;
     enableMultipixelDrawing = true;
     
     ofSetFullscreen(true);
@@ -491,7 +491,7 @@ void testApp::keyReleased(int key){
         case ' ':
         {
             saveToFile = true;
-            ofLog(OF_LOG_NOTICE, "calculating...");
+            ofLog(OF_LOG_NOTICE, ofGetTimestampString()+": calculating...");
             //ペアのデータを作成 -->
             vector<pointPair> pointPairVectorForWriting;
             for (int k=0; k<image1.getWidth()*image1.getHeight(); k++) {
@@ -513,37 +513,36 @@ void testApp::keyReleased(int key){
 										ofPoint minimumDistancePoint(1000, 1000);
                     unsigned char * checkImagePixels = image2.getPixels();
                     // 最小の距離の色を調べる
-                    for (int i=0; i<image1.getHeight(); i++) {
-                        for (int j=0; j<image1.getWidth(); j++) {
+                    for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
                             if (!enableDuplicate) {
                                 // 重複を許さない
-                                if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
-                                    ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
-                                                                 checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
-                                                                 checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
+                                if (!usedOrNotVector[i]) {
+                                    ofColor checkColor = ofColor(checkImagePixels[i*3],
+                                                                 checkImagePixels[i*3+1],
+                                                                 checkImagePixels[i*3+2]);
                                     double checkDistance = getColorDistance(referenceColor, checkColor);
                                     if (checkDistance < minimumDistance) {
                                             minimumDistance = checkDistance;
-                                            minimumDistancePoint = ofPoint(j, i);
+                                            minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
                                     }
                                 }
                             } else{
-                                ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
-                                                             checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
-                                                             checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
+                                ofColor checkColor = ofColor(checkImagePixels[i*3],
+                                                             checkImagePixels[i*3+1],
+                                                             checkImagePixels[i*3+2]);
                                 double checkDistance = getColorDistance(referenceColor, checkColor);
                                 if (checkDistance < minimumDistance) {
-                                    if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
+                                    if (!usedOrNotVector[i]) {
                                         minimumDistance = checkDistance;
-                                        minimumDistancePoint = ofPoint(j, i);
+                                        minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
                                     }
                                     // 同じ色の重複を許す
                                     minimumDistance = checkDistance;
-                                    minimumDistancePoint = ofPoint(j, i);
+                                    minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
                                 }
                             }
                         }
-                    }
+                    
                     //最も近い距離の色の組み合わせをベクターに保存
                     pointPair tempPointPair;
                     tempPointPair.point1 = referencePoint;
@@ -565,7 +564,7 @@ void testApp::keyReleased(int key){
             exportFileForStruct(pointPairVectorForWriting);
             ofLog(OF_LOG_NOTICE, ofToString("writing file..."));
             saveToFile = false;
-            ofLog(OF_LOG_NOTICE, "done");
+            ofLog(OF_LOG_NOTICE, ofGetTimestampString()+": done");
         }
             break;
         default:
@@ -616,7 +615,7 @@ void testApp::exportFileForStruct(vector<pointPair> ppv){
 void testApp::importFile(){
     vector<int> testvector;
     int count = 0;
-    ifstream in(ofToDataPath("deleteme/foo_2014-05-20-06-20-38-095.dat").c_str(), ios::in | ios::binary);
+    ifstream in(ofToDataPath("deleteme/foo_2014-05-21-00-25-47-197.dat").c_str(), ios::in | ios::binary);
     if ( !in ) return 1;
     in.read(reinterpret_cast<char*>(&count), sizeof(count)); //countのサイズ分をcountに入れる(一個目のデータがサイズであることが前提)
     testvector.assign(count, 0); //testvectorをcountの数個だけ、0で初期設定する
@@ -630,7 +629,7 @@ void testApp::importFile(){
 void testApp::importFileForStruct(vector<pointPair> *ppv){
     ppv->clear();
     int count = 0;
-    ifstream in(ofToDataPath("deleteme/foo_2014-05-20-06-20-38-095.dat").c_str(), ios::in | ios::binary);
+    ifstream in(ofToDataPath("deleteme/foo_2014-05-21-00-25-47-197.dat").c_str(), ios::in | ios::binary);
     if ( !in ) return ppv;
     in.read(reinterpret_cast<char*>(&count), sizeof(count));
     pointPair pp;

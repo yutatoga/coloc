@@ -52,6 +52,8 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
+		ofPushMatrix();
+		ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
 //    ofLog(OF_LOG_NOTICE, "draw"+ofToString(ofGetFrameNum()));
 //    if (!saveToFile) {
 //        if (counter <= image1.getWidth()*image1.getHeight()) {
@@ -238,11 +240,13 @@ void testApp::draw(){
 //				if (currentLeftImageOrigin.x < ofGetWidth()/2.0+marginBetweenImages/2.0) {
 //						currentLeftImageOrigin.x = currentLeftImageOrigin.x+1;
 //				}
-				image1.draw(currentLeftImageOrigin.x, currentLeftImageOrigin.y, image1.getWidth(), image2.getHeight());
+//				image1.draw(currentLeftImageOrigin.x, currentLeftImageOrigin.y, image1.getWidth(), image2.getHeight());
 				
 				// 1ピクセルの四角形での描画
 				// x軸,y軸それぞれ1個ずつ動くやりかた
 				// 左から右(交換版からオリジナルへの移行)
+//				ofPushMatrix();
+//				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
 				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
 						// 到達点
 						ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
@@ -290,7 +294,7 @@ void testApp::draw(){
 						ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y, 1, 1);
 						ofPopStyle();
 				}
-				
+//				ofPopMatrix();
 				
 				// 左右もしくは上下にしか動かないやりかた
 //				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
@@ -338,20 +342,13 @@ void testApp::draw(){
 //						ofPopStyle();
 //				}
 				
-				
-				//DELEME: debug
-				image2.draw((ofGetWidth()-image1.getWidth())/2.0, (ofGetHeight()-image1.getHeight())/2.0+200, image1.getWidth(), image2.getHeight());
-				//
-				ofPushStyle();
-				ofSetColor(ofColor::lightBlue);
-				ofLine(ofGetWidth()/2.0, 0, ofGetWidth()/2.0, ofGetHeight());
-				ofLine(0, ofGetHeight()/2.0, ofGetWidth(), ofGetHeight()/2.0);
-				ofPopStyle();
 		}
 		if (animationToExchange) {
 				// 1ピクセルの四角形での描画
 				// x軸,y軸それぞれ1個ずつ動くやりかた
 				// 左から右(オリジナルから交換版への移行)
+//				ofPushMatrix();
+//				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
 				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
 						// 到達点
 						ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
@@ -372,7 +369,7 @@ void testApp::draw(){
 						ofSetColor(image1.getColor(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y));
 						// 色を塗る
 						// 左から右
-						ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y+200, 1, 1);
+						ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
 						ofPopStyle();
 				}
 				// 右から左(オリジナルから交換版への移行)
@@ -395,10 +392,19 @@ void testApp::draw(){
 						ofPushStyle();
 						ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
 						// 色を塗る
-						ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y+200, 1, 1);
+						ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y, 1, 1);
 						ofPopStyle();
 				}
+//				ofPopMatrix();
 		}
+		ofPopMatrix();
+		
+		//DELEME: debug
+		ofPushStyle();
+		ofSetColor(ofColor::lightBlue);
+		ofLine(ofGetWidth()/2.0, 0, ofGetWidth()/2.0, ofGetHeight());
+		ofLine(0, ofGetHeight()/2.0, ofGetWidth(), ofGetHeight()/2.0);
+		ofPopStyle();
 }
 
 double testApp::getColorDistance(ofColor color1, ofColor color2){
@@ -438,19 +444,24 @@ void testApp::keyReleased(int key){
         case 'a':
             ofEnableAntiAliasing();
             break;
+        case 'b':
+            ofBackground(0, 0, 0, 255);
+            break;
 				case 'c':
 						animationToExchange = true;
 						setupCurrentPointVector(readPointPairVector);
 						break;
-        case 'b':
-            ofBackground(0, 0, 0, 255);
-            break;
         case 'd':
             ofDisableAlphaBlending();
             break;
         case 'e':
             ofEnableAlphaBlending();
             break;
+				case 'g':
+						animationToExchange = animationToExchange ? false : true;
+						animationToOriginal = animationToExchange ? false : true;
+						setupCurrentPointVector(readPointPairVector);
+						break;
 				case 'o':
 						animationToOriginal = true;
 						setupCurrentPointVector(readPointPairVector);

@@ -58,4 +58,7 @@ public:
 		int startAnimationFrameNum;
 		bool inAnimation;
 		vector<ofPoint> currentPointVector;
+		vector<ofPoint> currentRectPointVector;
+		ofPoint currentLeftImageOrigin;
+		float marginBetweenImages;
 };

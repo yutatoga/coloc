@@ -55,10 +55,13 @@ public:
     vector<pointPair> readPointPairVector;
 		
 		// アニメーション用
+		bool dataReaded;
 		int startAnimationFrameNum;
-		bool inAnimation;
+		bool animationToOriginal;
+		bool animationToExchange;
 		vector<ofPoint> currentPointVector;
-		vector<ofPoint> currentRectPointVector;
+		vector<ofPoint> currentRectRightPointVector;
+		vector<ofPoint> currentRectLeftPointVector;
 		ofPoint currentLeftImageOrigin;
 		float marginBetweenImages;
 };

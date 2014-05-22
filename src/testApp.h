@@ -68,6 +68,7 @@ public:
 		
 		//インタラクティブ版
 		bool enableInteractive;
+		bool enableFixFrameExchange;
 		//カメラ入力を準備
     ofVideoGrabber videoGrabber;
 		string calucurateFileName;

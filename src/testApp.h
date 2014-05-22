@@ -25,12 +25,14 @@ public:
     void gotMessage(ofMessage msg);
     
     void exportFile();
-    void exportFileForStruct(vector<pointPair> ppv);
+    void exportFileForStruct(vector<pointPair> ppv, string fileName);
     void importFile();
-    void importFileForStruct(vector<pointPair> *ppv);
+    void importFileForStruct(vector<pointPair> *ppv, string fileName);
     void setupCurrentPointVector(vector<pointPair> ppv);
 		
 		void moveUpDownLeftRight();
+		
+		void calucurateAndWrite();
 		
     
     double getColorDistance(ofColor color1, ofColor color2);
@@ -56,7 +58,6 @@ public:
 		
 		// アニメーション用
 		bool dataReaded;
-		int startAnimationFrameNum;
 		bool animationToOriginal;
 		bool animationToExchange;
 		vector<ofPoint> currentPointVector;
@@ -64,4 +65,10 @@ public:
 		vector<ofPoint> currentRectLeftPointVector;
 		ofPoint currentLeftImageOrigin;
 		float marginBetweenImages;
+		
+		//インタラクティブ版
+		bool enableInteractive;
+		//カメラ入力を準備
+    ofVideoGrabber videoGrabber;
+		string calucurateFileName;
 };

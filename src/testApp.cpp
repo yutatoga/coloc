@@ -7,17 +7,18 @@ void testApp::setup(){
     //    ofSetBackgroundAuto(false);
     
     //image1とimage2は、同じサイズであることを前提とする
-    image1.loadImage("otaniOniji.jpg");
-    image2.loadImage("monalisa.jpg");
+    image1.loadImage("monalisa_debug2.jpg");
+    image2.loadImage("monalisa_debug2.jpg");
     originalImage1 = image1;
     originalImage2 = image2;
     
     drawImageSwitch = false;
     counter = -1;
     for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-        usedOrNotVector.push_back(false);
         exchangeOrderVector.push_back(i);
     }
+		usedOrNotVector.assign((int)(image1.getWidth()*image1.getHeight()), false);
+		
 		// 重複がないピクセル数分のインデックスの乱数をつくる
     random_shuffle(exchangeOrderVector.begin(), exchangeOrderVector.end());
     enableDuplicate = false;
@@ -25,13 +26,13 @@ void testApp::setup(){
     enableRandomExchange = true;
     enableMultipixelDrawing = true;
     
-    ofSetFullscreen(true);
+//    ofSetFullscreen(true);
     
     saveToFile = false;
 		dataReaded = false;
 		animationToOriginal = false;
 		animationToExchange = false;
-		startAnimationFrameNum = -1;
+
 		
 		currentPointVector.assign((int)(image1.getWidth()*image1.getHeight()), 0);// image1のピクセル数分を0で初期化
 		currentRectRightPointVector.assign((int)(image1.getWidth()*image1.getHeight()), 0);
@@ -39,6 +40,20 @@ void testApp::setup(){
 		// 左右が入れ替わるアニメーションのため
 		marginBetweenImages = 50;
 		currentLeftImageOrigin = ofPoint(ofGetWidth()/2.0-image1.getWidth()-marginBetweenImages/2.0, (ofGetHeight()-image1.getHeight())/2.0);
+		
+		
+		enableInteractive = true;
+
+
+		if (enableInteractive) {
+				//カメラ
+				//				ofSetLogLevel(OF_LOG_VERBOSE);
+				//				vidGrabber.listDevices();
+				// ADJUSTME: カメラを確認して、使いたいカメラのIDを入力すること
+				//		videoGrabber.setDeviceID(1); // logicool 920を挿した時は、 0 - FaceTime HD Camera (Built-in) / 1 - HD Pro Webcam C920
+				videoGrabber.initGrabber(image2.getWidth(), image2.getHeight());
+		}
+		
 }
 
 //--------------------------------------------------------------
@@ -48,356 +63,365 @@ void testApp::update(){
             counter++;
         }
     }
+
+				//カメラ
+				videoGrabber.update();
+				if (videoGrabber.isFrameNew()) {
+				}
+		
+
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-		ofPushMatrix();
-		ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
-//    ofLog(OF_LOG_NOTICE, "draw"+ofToString(ofGetFrameNum()));
-//    if (!saveToFile) {
-//        if (counter <= image1.getWidth()*image1.getHeight()) {
-//            // 左の画像を右の画像に入れ替える
-//            ofPoint referencePoint;
-//            if (enableRandomExchange) {
-//                //ランダムで交換
-//                referencePoint = ofPoint(exchangeOrderVector[counter]%(int)image1.getWidth(), exchangeOrderVector[counter]/(int)image1.getWidth());
-//                
-//            }else{
-//                //上から順に交換
-//                referencePoint = ofPoint(counter%(int)image1.getWidth(), counter/(int)image1.getWidth());
-//            }
-//            ofColor referenceColor = image1.getColor(referencePoint.x, referencePoint.y);
-//            double minimumDistance = image1.getWidth()+image2.getHeight();
-//            ofPoint minimumDistancePoint;
-//            unsigned char * checkImagePixels = image2.getPixels();
-//            // 最小の距離の色を調べる
-//            for (int i=0; i<image1.getHeight(); i++) {
-//                for (int j=0; j<image1.getWidth(); j++) {
-//                    if (!enableDuplicate) {
-//                        // 重複を許さない
-//                        if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
-//                            ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
-//                                                         checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
-//                                                         checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
-//                            double checkDistance = getColorDistance(referenceColor, checkColor);
-//                            if (checkDistance < minimumDistance) {
-//                                if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
-//                                    minimumDistance = checkDistance;
-//                                    minimumDistancePoint = ofPoint(j, i);
-//                                }
-//                                // 同じ色の重複を許す
-//                                minimumDistance = checkDistance;
-//                                minimumDistancePoint = ofPoint(j, i);
-//                            }
-//                        }
-//                    } else{
-//                        ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
-//                                                     checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
-//                                                     checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
-//                        double checkDistance = getColorDistance(referenceColor, checkColor);
-//                        if (checkDistance < minimumDistance) {
-//                            if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
-//                                minimumDistance = checkDistance;
-//                                minimumDistancePoint = ofPoint(j, i);
-//                            }
-//                            // 同じ色の重複を許す
-//                            minimumDistance = checkDistance;
-//                            minimumDistancePoint = ofPoint(j, i);
-//                        }
-//                    }
-//                }
-//            }
-//            //最も近い距離の色の組み合わせをベクターに保存
-//            pointPair tempPointPair;
-//            tempPointPair.point1 = referencePoint;
-//            tempPointPair.point2 = minimumDistancePoint;
-//            
-//            // 重複を許さない
-//            if (!enableDuplicate) {
-//                //再利用しないために、使用したPointを保存
-//                usedOrNotVector[minimumDistancePoint.y*(int)image2.getWidth()+minimumDistancePoint.x] = true;
-//            }
-//            pointPairVector.push_back(tempPointPair);
-//            //    ofLog(OF_LOG_NOTICE, "X:"+ofToString(pointPairVector.back().point2.x)+" Y:"+ofToString(pointPairVector.back().point2.y));
-//            
-//            // 左の画像の色を入れ替える
-//            image1.setColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y, image2.getColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y));
-//            image1.update();
-//            
-//            // 右の画像の色を入れ替える
-//            if (enableExchange) {
-//                image2.setColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y, originalImage1.getColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y));
-//                image2.update();
-//            }
-//        }
-//        
-//        // draw image
-//        image1.draw(ofPoint(ofGetWidth()/4.-image1.getWidth()/2.+100, (ofGetHeight()-image1.getHeight())/2.), image1.getWidth(), image1.getHeight());
-//        image2.draw(ofPoint(ofGetWidth()/4.*3-image2.getWidth()/2.-100 , (ofGetHeight()-image2.getHeight())/2.), image2.getWidth(), image2.getHeight());
-//        
-//        //hightLihgting
-//        if (counter <= image1.getWidth()*image1.getHeight()) {
-//            ofPushStyle();
-//            ofSetColor(ofColor::white);
-//            ofSetLineWidth(1);
-//            ofLine(pointPairVector.back().point1.x+(ofGetWidth()/4.-image1.getWidth()/2.+100), pointPairVector.back().point1.y+((ofGetHeight()-image1.getHeight())/2.),
-//                   pointPairVector.back().point2.x+(ofGetWidth()/4.*3-image2.getWidth()/2.-100), pointPairVector.back().point2.y+((ofGetHeight()-image2.getHeight())/2.));
-//            ofPopStyle();
-//        }
-//        
-//    }
-		if (dataReaded && animationToOriginal) {
-				// debug - アニメーションせずに入れ替える。(動いてる模様)
-//				for (int i=0; i<image1.getHeight(); i++) {
-//						for (int j=0; j<image1.getWidth(); j++) {
-//								image1.setColor(readPointPairVector[i*(int)image2.getWidth()+j].point1.x, readPointPairVector[i*(int)image2.getWidth()+j].point1.y,
-//																image2.getColor(readPointPairVector[i*(int)image2.getWidth()+j].point2.x, readPointPairVector[i*(int)image2.getWidth()+j].point2.y));
-//						}
-//				}
-				
-				// x軸,y軸それぞれ1個ずつ動くやりかた。(動いてる模様)
-//				// リセット
-//				image1.setColor(ofColor::black);
-//				for (int i=0; i<image1.getHeight(); i++) {
-//						for (int j=0; j<image1.getWidth(); j++) {
-//								//x軸
-//								if (readPointPairVector[i*(int)image2.getWidth()+j].point2.x-currentPointVector[i*(int)image2.getWidth()+j].x > 0) {
-//										currentPointVector[i*(int)image2.getWidth()+j].x++;
-//								}else if(readPointPairVector[i*(int)image2.getWidth()+j].point2.x-currentPointVector[i*(int)image2.getWidth()+j].x < 0){
-//										currentPointVector[i*(int)image2.getWidth()+j].x--;
-//								}
-//								//y軸
-//								if (readPointPairVector[i*(int)image2.getWidth()+j].point2.y-currentPointVector[i*(int)image2.getWidth()+j].y > 0) {
-//										currentPointVector[i*(int)image2.getWidth()+j].y++;
-//								}else if(readPointPairVector[i*(int)image2.getWidth()+j].point2.y-currentPointVector[i*(int)image2.getWidth()+j].y < 0){
-//										currentPointVector[i*(int)image2.getWidth()+j].y--;
-//								}
-//								
-//								// 色をぬる
-//								image1.setColor(currentPointVector[i*(int)image2.getWidth()+j].x, currentPointVector[i*(int)image2.getWidth()+j].y,
-//																image2.getColor(readPointPairVector[i*(int)image2.getWidth()+j].point2.x, readPointPairVector[i*(int)image2.getWidth()+j].point2.y));
-//								
-//						}
-//				}
-				
-				
-				// 左右もしくは上下にしか動かないやりかた(画像データを書き換えるやり方)
-//				image1.setColor(ofColor::black);
-//				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-//								if (abs(readPointPairVector[i].point2.x-readPointPairVector[i].point1.x) <
-//										abs(readPointPairVector[i].point2.y-readPointPairVector[i].point1.y)) {
-//										// x方向が先に移動
-//										if(readPointPairVector[i].point2.x-currentPointVector[i].x < 0){
-//												//1ピクセル負の方向に移動
-//												currentPointVector[i].x = currentPointVector[i].x-1;
-//										}
-//										else if (readPointPairVector[i].point2.x-currentPointVector[i].x > 0){
-//												//1ピクセル正の方向に移動
-//												currentPointVector[i].x = currentPointVector[i].x+1;
-//										}else{
-//												//y方向に移動
-//												if (readPointPairVector[i].point2.y-currentPointVector[i].y < 0) {
-//														//1ピクセル負の方向に移動
-//														currentPointVector[i].y = currentPointVector[i].y-1;
-//												}else if (readPointPairVector[i].point2.y-currentPointVector[i].y > 0){
-//														//1ピクセル正の方向に移動
-//														currentPointVector[i].y = currentPointVector[i].y+1;
-//												}else{
-//														//ゴールに到着しているので、なにもしない
-//												}
-//										}
-//								}else{
-//										// y方向が先に移動
-//										if (readPointPairVector[i].point2.y-currentPointVector[i].y < 0) {
-//												//1ピクセル負の方向に移動
-//												currentPointVector[i].y = currentPointVector[i].y-1;
-//										}else if (readPointPairVector[i].point2.y-currentPointVector[i].y > 0){
-//												//1ピクセル正の方向に移動
-//												currentPointVector[i].y = currentPointVector[i].y+1;
-//										}else{
-//												//x方向に移動
-//												if(readPointPairVector[i].point2.x-currentPointVector[i].x < 0){
-//														//1ピクセル負の方向に移動
-//														currentPointVector[i].x = currentPointVector[i].x-1;
-//												}
-//												else if (readPointPairVector[i].point2.x-currentPointVector[i].x > 0){
-//														//1ピクセル正の方向に移動
-//														currentPointVector[i].x = currentPointVector[i].x+1;
-//												}else{
-//														//ゴールに到着しているので何もしない
-//												}
-//										}
-//								}
-//								//ずらしたpoint1の位置に、point2の色を設定
-//								image1.setColor(currentPointVector[i].x, currentPointVector[i].y,
-//																image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
-//				}
-//				image1.update();
-				
-//				//絵全体を左から右に移動する
-//				// 目標地点が: ofGetWidth()/2.0+marginBetweenImages/2.0
-//				if (currentLeftImageOrigin.x < ofGetWidth()/2.0+marginBetweenImages/2.0) {
-//						currentLeftImageOrigin.x = currentLeftImageOrigin.x+1;
-//				}
-//				image1.draw(currentLeftImageOrigin.x, currentLeftImageOrigin.y, image1.getWidth(), image2.getHeight());
-				
-				// 1ピクセルの四角形での描画
-				// x軸,y軸それぞれ1個ずつ動くやりかた
-				// 左から右(交換版からオリジナルへの移行)
-//				ofPushMatrix();
-//				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
-				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-						// 到達点
-						ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
-						// x軸
-						if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
-								currentRectRightPointVector[i].x++;
-						}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
-								currentRectRightPointVector[i].x--;
-						}
-						// y軸
-						if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
-								currentRectRightPointVector[i].y++;
-						}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
-								currentRectRightPointVector[i].y--;
-						}
+				ofPushMatrix();
+				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
+				//    ofLog(OF_LOG_NOTICE, "draw"+ofToString(ofGetFrameNum()));
+				//    if (!saveToFile) {
+				//        if (counter <= image1.getWidth()*image1.getHeight()) {
+				//            // 左の画像を右の画像に入れ替える
+				//            ofPoint referencePoint;
+				//            if (enableRandomExchange) {
+				//                //ランダムで交換
+				//                referencePoint = ofPoint(exchangeOrderVector[counter]%(int)image1.getWidth(), exchangeOrderVector[counter]/(int)image1.getWidth());
+				//
+				//            }else{
+				//                //上から順に交換
+				//                referencePoint = ofPoint(counter%(int)image1.getWidth(), counter/(int)image1.getWidth());
+				//            }
+				//            ofColor referenceColor = image1.getColor(referencePoint.x, referencePoint.y);
+				//            double minimumDistance = image1.getWidth()+image2.getHeight();
+				//            ofPoint minimumDistancePoint;
+				//            unsigned char * checkImagePixels = image2.getPixels();
+				//            // 最小の距離の色を調べる
+				//            for (int i=0; i<image1.getHeight(); i++) {
+				//                for (int j=0; j<image1.getWidth(); j++) {
+				//                    if (!enableDuplicate) {
+				//                        // 重複を許さない
+				//                        if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
+				//                            ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
+				//                                                         checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
+				//                                                         checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
+				//                            double checkDistance = getColorDistance(referenceColor, checkColor);
+				//                            if (checkDistance < minimumDistance) {
+				//                                if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
+				//                                    minimumDistance = checkDistance;
+				//                                    minimumDistancePoint = ofPoint(j, i);
+				//                                }
+				//                                // 同じ色の重複を許す
+				//                                minimumDistance = checkDistance;
+				//                                minimumDistancePoint = ofPoint(j, i);
+				//                            }
+				//                        }
+				//                    } else{
+				//                        ofColor checkColor = ofColor(checkImagePixels[(i*(int)image2.getWidth()+j)*3],
+				//                                                     checkImagePixels[(i*(int)image2.getWidth()+j)*3+1],
+				//                                                     checkImagePixels[(i*(int)image2.getWidth()+j)*3+2]);
+				//                        double checkDistance = getColorDistance(referenceColor, checkColor);
+				//                        if (checkDistance < minimumDistance) {
+				//                            if (!usedOrNotVector[i*(int)image2.getWidth()+j]) {
+				//                                minimumDistance = checkDistance;
+				//                                minimumDistancePoint = ofPoint(j, i);
+				//                            }
+				//                            // 同じ色の重複を許す
+				//                            minimumDistance = checkDistance;
+				//                            minimumDistancePoint = ofPoint(j, i);
+				//                        }
+				//                    }
+				//                }
+				//            }
+				//            //最も近い距離の色の組み合わせをベクターに保存
+				//            pointPair tempPointPair;
+				//            tempPointPair.point1 = referencePoint;
+				//            tempPointPair.point2 = minimumDistancePoint;
+				//
+				//            // 重複を許さない
+				//            if (!enableDuplicate) {
+				//                //再利用しないために、使用したPointを保存
+				//                usedOrNotVector[minimumDistancePoint.y*(int)image2.getWidth()+minimumDistancePoint.x] = true;
+				//            }
+				//            pointPairVector.push_back(tempPointPair);
+				//            //    ofLog(OF_LOG_NOTICE, "X:"+ofToString(pointPairVector.back().point2.x)+" Y:"+ofToString(pointPairVector.back().point2.y));
+				//
+				//            // 左の画像の色を入れ替える
+				//            image1.setColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y, image2.getColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y));
+				//            image1.update();
+				//
+				//            // 右の画像の色を入れ替える
+				//            if (enableExchange) {
+				//                image2.setColor(pointPairVector.back().point2.x, pointPairVector.back().point2.y, originalImage1.getColor(pointPairVector.back().point1.x, pointPairVector.back().point1.y));
+				//                image2.update();
+				//            }
+				//        }
+				//
+				//        // draw image
+				//        image1.draw(ofPoint(ofGetWidth()/4.-image1.getWidth()/2.+100, (ofGetHeight()-image1.getHeight())/2.), image1.getWidth(), image1.getHeight());
+				//        image2.draw(ofPoint(ofGetWidth()/4.*3-image2.getWidth()/2.-100 , (ofGetHeight()-image2.getHeight())/2.), image2.getWidth(), image2.getHeight());
+				//
+				//        //hightLihgting
+				//        if (counter <= image1.getWidth()*image1.getHeight()) {
+				//            ofPushStyle();
+				//            ofSetColor(ofColor::white);
+				//            ofSetLineWidth(1);
+				//            ofLine(pointPairVector.back().point1.x+(ofGetWidth()/4.-image1.getWidth()/2.+100), pointPairVector.back().point1.y+((ofGetHeight()-image1.getHeight())/2.),
+				//                   pointPairVector.back().point2.x+(ofGetWidth()/4.*3-image2.getWidth()/2.-100), pointPairVector.back().point2.y+((ofGetHeight()-image2.getHeight())/2.));
+				//            ofPopStyle();
+				//        }
+				//
+				//    }
+				if (dataReaded && animationToOriginal) {
+						// debug - アニメーションせずに入れ替える。(動いてる模様)
+						//				for (int i=0; i<image1.getHeight(); i++) {
+						//						for (int j=0; j<image1.getWidth(); j++) {
+						//								image1.setColor(readPointPairVector[i*(int)image2.getWidth()+j].point1.x, readPointPairVector[i*(int)image2.getWidth()+j].point1.y,
+						//																image2.getColor(readPointPairVector[i*(int)image2.getWidth()+j].point2.x, readPointPairVector[i*(int)image2.getWidth()+j].point2.y));
+						//						}
+						//				}
 						
-						ofPushStyle();
-						ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
-						// 色を塗る
-						// 左から右
-						ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
-						ofPopStyle();
-				}
-				
-				// 右から左(交換版からオリジナルへの移行)
-				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-						// 到達点
-						ofPoint goalPoint(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y);
-						// x軸
-						if (goalPoint.x-currentRectLeftPointVector[i].x > 0) {
-								currentRectLeftPointVector[i].x++;
-						}else if(goalPoint.x-currentRectLeftPointVector[i].x < 0){
-								currentRectLeftPointVector[i].x--;
-						}
-						// y軸
-						if (goalPoint.y-currentRectLeftPointVector[i].y > 0) {
-								currentRectLeftPointVector[i].y++;
-						}else if(goalPoint.y-currentRectLeftPointVector[i].y < 0){
-								currentRectLeftPointVector[i].y--;
-						}
+						// x軸,y軸それぞれ1個ずつ動くやりかた。(動いてる模様)
+						//				// リセット
+						//				image1.setColor(ofColor::black);
+						//				for (int i=0; i<image1.getHeight(); i++) {
+						//						for (int j=0; j<image1.getWidth(); j++) {
+						//								//x軸
+						//								if (readPointPairVector[i*(int)image2.getWidth()+j].point2.x-currentPointVector[i*(int)image2.getWidth()+j].x > 0) {
+						//										currentPointVector[i*(int)image2.getWidth()+j].x++;
+						//								}else if(readPointPairVector[i*(int)image2.getWidth()+j].point2.x-currentPointVector[i*(int)image2.getWidth()+j].x < 0){
+						//										currentPointVector[i*(int)image2.getWidth()+j].x--;
+						//								}
+						//								//y軸
+						//								if (readPointPairVector[i*(int)image2.getWidth()+j].point2.y-currentPointVector[i*(int)image2.getWidth()+j].y > 0) {
+						//										currentPointVector[i*(int)image2.getWidth()+j].y++;
+						//								}else if(readPointPairVector[i*(int)image2.getWidth()+j].point2.y-currentPointVector[i*(int)image2.getWidth()+j].y < 0){
+						//										currentPointVector[i*(int)image2.getWidth()+j].y--;
+						//								}
+						//
+						//								// 色をぬる
+						//								image1.setColor(currentPointVector[i*(int)image2.getWidth()+j].x, currentPointVector[i*(int)image2.getWidth()+j].y,
+						//																image2.getColor(readPointPairVector[i*(int)image2.getWidth()+j].point2.x, readPointPairVector[i*(int)image2.getWidth()+j].point2.y));
+						//
+						//						}
+						//				}
 						
-						ofPushStyle();
-						ofSetColor(image1.getColor(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y));
-						// 色を塗る
-						ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y, 1, 1);
-						ofPopStyle();
-				}
-//				ofPopMatrix();
-				
-				// 左右もしくは上下にしか動かないやりかた
-//				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-//						// 到達点
-//						ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
-//						if (abs(readPointPairVector[i].point2.x-readPointPairVector[i].point1.x) <
-//								abs(readPointPairVector[i].point2.y-readPointPairVector[i].point1.y)) {
-//								// x方向が先に移動
-//								if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
-//										currentRectRightPointVector[i].x++;
-//								}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
-//										currentRectRightPointVector[i].x--;
-//								}else{
-//										//y方向に移動
-//										if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
-//												currentRectRightPointVector[i].y++;
-//										}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
-//												currentRectRightPointVector[i].y--;
-//										}else{
-//												//ゴールに到着しているので、なにもしない
-//										}
-//								}
-//						}else{
-//								// y方向が先に移動
-//								// y軸
-//								if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
-//										currentRectRightPointVector[i].y++;
-//								}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
-//										currentRectRightPointVector[i].y--;
-//								}else{
-//										//x方向に移動
-//										if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
-//												currentRectRightPointVector[i].x++;
-//										}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
-//												currentRectRightPointVector[i].x--;
-//										}else{
-//												//ゴールに到着しているので何もしない
-//										}
-//								}
-//						}
-//						ofPushStyle();
-//						ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
-//						// 色を塗る
-//						ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
-//						ofPopStyle();
-//				}
-				
-		}
-		if (animationToExchange) {
-				// 1ピクセルの四角形での描画
-				// x軸,y軸それぞれ1個ずつ動くやりかた
-				// 左から右(オリジナルから交換版への移行)
-//				ofPushMatrix();
-//				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
-				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-						// 到達点
-						ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
-						// x軸
-						if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
-								currentRectRightPointVector[i].x++;
-						}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
-								currentRectRightPointVector[i].x--;
-						}
-						// y軸
-						if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
-								currentRectRightPointVector[i].y++;
-						}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
-								currentRectRightPointVector[i].y--;
-						}
 						
-						ofPushStyle();
-						ofSetColor(image1.getColor(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y));
-						// 色を塗る
-						// 左から右
-						ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
-						ofPopStyle();
-				}
-				// 右から左(オリジナルから交換版への移行)
-				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-						// 到達点
-						ofPoint goalPoint(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y);
-						// x軸
-						if (goalPoint.x-currentRectLeftPointVector[i].x > 0) {
-								currentRectLeftPointVector[i].x++;
-						}else if(goalPoint.x-currentRectLeftPointVector[i].x < 0){
-								currentRectLeftPointVector[i].x--;
-						}
-						// y軸
-						if (goalPoint.y-currentRectLeftPointVector[i].y > 0) {
-								currentRectLeftPointVector[i].y++;
-						}else if(goalPoint.y-currentRectLeftPointVector[i].y < 0){
-								currentRectLeftPointVector[i].y--;
-						}
+						// 左右もしくは上下にしか動かないやりかた(画像データを書き換えるやり方)
+						//				image1.setColor(ofColor::black);
+						//				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+						//								if (abs(readPointPairVector[i].point2.x-readPointPairVector[i].point1.x) <
+						//										abs(readPointPairVector[i].point2.y-readPointPairVector[i].point1.y)) {
+						//										// x方向が先に移動
+						//										if(readPointPairVector[i].point2.x-currentPointVector[i].x < 0){
+						//												//1ピクセル負の方向に移動
+						//												currentPointVector[i].x = currentPointVector[i].x-1;
+						//										}
+						//										else if (readPointPairVector[i].point2.x-currentPointVector[i].x > 0){
+						//												//1ピクセル正の方向に移動
+						//												currentPointVector[i].x = currentPointVector[i].x+1;
+						//										}else{
+						//												//y方向に移動
+						//												if (readPointPairVector[i].point2.y-currentPointVector[i].y < 0) {
+						//														//1ピクセル負の方向に移動
+						//														currentPointVector[i].y = currentPointVector[i].y-1;
+						//												}else if (readPointPairVector[i].point2.y-currentPointVector[i].y > 0){
+						//														//1ピクセル正の方向に移動
+						//														currentPointVector[i].y = currentPointVector[i].y+1;
+						//												}else{
+						//														//ゴールに到着しているので、なにもしない
+						//												}
+						//										}
+						//								}else{
+						//										// y方向が先に移動
+						//										if (readPointPairVector[i].point2.y-currentPointVector[i].y < 0) {
+						//												//1ピクセル負の方向に移動
+						//												currentPointVector[i].y = currentPointVector[i].y-1;
+						//										}else if (readPointPairVector[i].point2.y-currentPointVector[i].y > 0){
+						//												//1ピクセル正の方向に移動
+						//												currentPointVector[i].y = currentPointVector[i].y+1;
+						//										}else{
+						//												//x方向に移動
+						//												if(readPointPairVector[i].point2.x-currentPointVector[i].x < 0){
+						//														//1ピクセル負の方向に移動
+						//														currentPointVector[i].x = currentPointVector[i].x-1;
+						//												}
+						//												else if (readPointPairVector[i].point2.x-currentPointVector[i].x > 0){
+						//														//1ピクセル正の方向に移動
+						//														currentPointVector[i].x = currentPointVector[i].x+1;
+						//												}else{
+						//														//ゴールに到着しているので何もしない
+						//												}
+						//										}
+						//								}
+						//								//ずらしたpoint1の位置に、point2の色を設定
+						//								image1.setColor(currentPointVector[i].x, currentPointVector[i].y,
+						//																image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
+						//				}
+						//				image1.update();
 						
-						ofPushStyle();
-						ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
-						// 色を塗る
-						ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y, 1, 1);
-						ofPopStyle();
+						//				//絵全体を左から右に移動する
+						//				// 目標地点が: ofGetWidth()/2.0+marginBetweenImages/2.0
+						//				if (currentLeftImageOrigin.x < ofGetWidth()/2.0+marginBetweenImages/2.0) {
+						//						currentLeftImageOrigin.x = currentLeftImageOrigin.x+1;
+						//				}
+						//				image1.draw(currentLeftImageOrigin.x, currentLeftImageOrigin.y, image1.getWidth(), image2.getHeight());
+						
+						// 1ピクセルの四角形での描画
+						// x軸,y軸それぞれ1個ずつ動くやりかた
+						// 左から右(交換版からオリジナルへの移行)
+						//				ofPushMatrix();
+						//				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
+						for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+								// 到達点
+								ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
+								// x軸
+								if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
+										currentRectRightPointVector[i].x++;
+								}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
+										currentRectRightPointVector[i].x--;
+								}
+								// y軸
+								if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
+										currentRectRightPointVector[i].y++;
+								}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
+										currentRectRightPointVector[i].y--;
+								}
+								
+								ofPushStyle();
+								ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
+								// 色を塗る
+								// 左から右
+								ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
+								ofPopStyle();
+						}
+
+						// 右から左(交換版からオリジナルへの移行)
+						for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+								// 到達点
+								ofPoint goalPoint(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y);
+								// x軸
+								if (goalPoint.x-currentRectLeftPointVector[i].x > 0) {
+										currentRectLeftPointVector[i].x++;
+								}else if(goalPoint.x-currentRectLeftPointVector[i].x < 0){
+										currentRectLeftPointVector[i].x--;
+								}
+								// y軸
+								if (goalPoint.y-currentRectLeftPointVector[i].y > 0) {
+										currentRectLeftPointVector[i].y++;
+								}else if(goalPoint.y-currentRectLeftPointVector[i].y < 0){
+										currentRectLeftPointVector[i].y--;
+								}
+								
+								ofPushStyle();
+								ofSetColor(image1.getColor(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y));
+								// 色を塗る
+								ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y, 1, 1);
+								ofPopStyle();
+						}
+						//				ofPopMatrix();
+						
+						// 左右もしくは上下にしか動かないやりかた
+						//				for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+						//						// 到達点
+						//						ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
+						//						if (abs(readPointPairVector[i].point2.x-readPointPairVector[i].point1.x) <
+						//								abs(readPointPairVector[i].point2.y-readPointPairVector[i].point1.y)) {
+						//								// x方向が先に移動
+						//								if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
+						//										currentRectRightPointVector[i].x++;
+						//								}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
+						//										currentRectRightPointVector[i].x--;
+						//								}else{
+						//										//y方向に移動
+						//										if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
+						//												currentRectRightPointVector[i].y++;
+						//										}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
+						//												currentRectRightPointVector[i].y--;
+						//										}else{
+						//												//ゴールに到着しているので、なにもしない
+						//										}
+						//								}
+						//						}else{
+						//								// y方向が先に移動
+						//								// y軸
+						//								if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
+						//										currentRectRightPointVector[i].y++;
+						//								}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
+						//										currentRectRightPointVector[i].y--;
+						//								}else{
+						//										//x方向に移動
+						//										if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
+						//												currentRectRightPointVector[i].x++;
+						//										}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
+						//												currentRectRightPointVector[i].x--;
+						//										}else{
+						//												//ゴールに到着しているので何もしない
+						//										}
+						//								}
+						//						}
+						//						ofPushStyle();
+						//						ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
+						//						// 色を塗る
+						//						ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
+						//						ofPopStyle();
+						//				}
+						
 				}
-//				ofPopMatrix();
-		}
-		ofPopMatrix();
+				if (animationToExchange) {
+						// 1ピクセルの四角形での描画
+						// x軸,y軸それぞれ1個ずつ動くやりかた
+						// 左から右(オリジナルから交換版への移行)
+						//				ofPushMatrix();
+						//				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
+						for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+								// 到達点
+								ofPoint goalPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
+								// x軸
+								if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
+										currentRectRightPointVector[i].x++;
+								}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
+										currentRectRightPointVector[i].x--;
+								}
+								// y軸
+								if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
+										currentRectRightPointVector[i].y++;
+								}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
+										currentRectRightPointVector[i].y--;
+								}
+								
+								ofPushStyle();
+								ofSetColor(image1.getColor(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y));
+								// 色を塗る
+								// 左から右
+								ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
+								ofPopStyle();
+						}
+						// 右から左(オリジナルから交換版への移行)
+						for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+								// 到達点
+								ofPoint goalPoint(readPointPairVector[i].point1.x, readPointPairVector[i].point1.y);
+								// x軸
+								if (goalPoint.x-currentRectLeftPointVector[i].x > 0) {
+										currentRectLeftPointVector[i].x++;
+								}else if(goalPoint.x-currentRectLeftPointVector[i].x < 0){
+										currentRectLeftPointVector[i].x--;
+								}
+								// y軸
+								if (goalPoint.y-currentRectLeftPointVector[i].y > 0) {
+										currentRectLeftPointVector[i].y++;
+								}else if(goalPoint.y-currentRectLeftPointVector[i].y < 0){
+										currentRectLeftPointVector[i].y--;
+								}
+								
+								ofPushStyle();
+								ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
+								// 色を塗る
+								ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y, 1, 1);
+								ofPopStyle();
+						}
+						//				ofPopMatrix();
+				}
+				ofPopMatrix();
+
+		
 		
 		//DELEME: debug
 		ofPushStyle();
@@ -468,9 +492,9 @@ void testApp::keyReleased(int key){
 						break;
         case 'r':
             //read file
-            importFileForStruct(&readPointPairVector);
+						readPointPairVector.clear();
+            importFileForStruct(&readPointPairVector, calucurateFileName);
             setupCurrentPointVector(readPointPairVector);
-						ofLog(OF_LOG_NOTICE, "CHECK:"+ofToString(readPointPairVector.size()));
 //            for (int i=0; i<image1.getHeight(); i++) {
 //                for (int j=0; j<image1.getWidth(); j++) {
 //                    image1.setColor(readPointPairVector[i*(int)image1.getWidth()+j].point1.x,
@@ -480,96 +504,108 @@ void testApp::keyReleased(int key){
 //                }
 //            }
 						dataReaded = true;
-						startAnimationFrameNum = ofGetFrameNum();
             break;
         case 's':
             ofDisableAntiAliasing();
             break;
+				case 't':
+						image1.clear();
+						usedOrNotVector.assign((int)(image1.getWidth()*image1.getHeight()), false);
+						image1.setFromPixels(videoGrabber.getPixelsRef());
+						image1.mirror(false, true);
+						calucurateAndWrite();
+						break;
+				case 'u':
+						importFileForStruct(&readPointPairVector, calucurateFileName);// ファイル名を書けるようにする
+            setupCurrentPointVector(readPointPairVector);
+						break;
         case 'w':
             ofBackground(255, 255, 255, 255);
             break;
         case ' ':
-        {
-            saveToFile = true;
-            ofLog(OF_LOG_NOTICE, ofGetTimestampString()+": calculating...");
-            //ペアのデータを作成 -->
-            vector<pointPair> pointPairVectorForWriting;
-            for (int k=0; k<image1.getWidth()*image1.getHeight(); k++) {
-                if (k <= image1.getWidth()*image1.getHeight()) {
-                    // 左の画像を右の画像に入れ替える
-                    ofPoint referencePoint;
-                    if (enableRandomExchange) {
-                        //ランダムで交換
-                        referencePoint = ofPoint(exchangeOrderVector[k]%(int)image1.getWidth(), exchangeOrderVector[k]/(int)image1.getWidth());
-                    }else{
-                        //上から順に交換
-                        referencePoint = ofPoint(k%(int)image1.getWidth(), k/(int)image1.getWidth());
-                    }
-										// 距離を調べる元になる色
-                    ofColor referenceColor = image1.getColor(referencePoint.x, referencePoint.y);
-                    // for文の中で見つかった今のところの最小距離を保存しておく
-										double minimumDistance = getColorDistance(ofColor(0, 0, 0), ofColor(255, 255, 255)); // 初期化はgetColorDistance関数で、最大の距離になるもの
-                    // for文の中で見つかった今のところの最小点を保存しておく
-										ofPoint minimumDistancePoint(1000, 1000);
-                    unsigned char * checkImagePixels = image2.getPixels();
-                    // 最小の距離の色を調べる
-                    for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
-                            if (!enableDuplicate) {
-                                // 重複を許さない
-                                if (!usedOrNotVector[i]) {
-                                    ofColor checkColor = ofColor(checkImagePixels[i*3],
-                                                                 checkImagePixels[i*3+1],
-                                                                 checkImagePixels[i*3+2]);
-                                    double checkDistance = getColorDistance(referenceColor, checkColor);
-                                    if (checkDistance < minimumDistance) {
-                                            minimumDistance = checkDistance;
-                                            minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
-                                    }
-                                }
-                            } else{
-                                ofColor checkColor = ofColor(checkImagePixels[i*3],
-                                                             checkImagePixels[i*3+1],
-                                                             checkImagePixels[i*3+2]);
-                                double checkDistance = getColorDistance(referenceColor, checkColor);
-                                if (checkDistance < minimumDistance) {
-                                    if (!usedOrNotVector[i]) {
-                                        minimumDistance = checkDistance;
-                                        minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
-                                    }
-                                    // 同じ色の重複を許す
-                                    minimumDistance = checkDistance;
-                                    minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
-                                }
-                            }
-                        }
-                    
-                    //最も近い距離の色の組み合わせをベクターに保存
-                    pointPair tempPointPair;
-                    tempPointPair.point1 = referencePoint;
-                    tempPointPair.point2 = minimumDistancePoint;
-                    
-                    // 重複を許さない
-                    if (!enableDuplicate) {
-                        //再利用しないために、使用したPointを保存
-                        usedOrNotVector[minimumDistancePoint.y*(int)image2.getWidth()+minimumDistancePoint.x] = true;
-                    }
-										// 最短距離の色のペアを保存
-                    pointPairVectorForWriting.push_back(tempPointPair);
-                }
-            }
-            ofLog(OF_LOG_NOTICE, "pointPairVectorForWriting done!");
-            //<-- ペアのデータを作成
-            ofLog(OF_LOG_NOTICE, "X1:"+ofToString(pointPairVectorForWriting[0].point1.x)+" Y1:"+ofToString(pointPairVectorForWriting[0].point1.y));
-            ofLog(OF_LOG_NOTICE, "X2:"+ofToString(pointPairVectorForWriting[0].point2.x)+" Y2:"+ofToString(pointPairVectorForWriting[0].point2.y));
-            exportFileForStruct(pointPairVectorForWriting);
-            ofLog(OF_LOG_NOTICE, ofToString("writing file..."));
-            saveToFile = false;
-            ofLog(OF_LOG_NOTICE, ofGetTimestampString()+": done");
-        }
+						calucurateAndWrite();
             break;
         default:
             break;
     }
+}
+
+void testApp::calucurateAndWrite(){
+		saveToFile = true;
+		ofLog(OF_LOG_NOTICE, ofGetTimestampString()+": calculating...");
+		//ペアのデータを作成 -->
+		vector<pointPair> pointPairVectorForWriting;
+		for (int k=0; k<image1.getWidth()*image1.getHeight(); k++) {
+				if (k <= image1.getWidth()*image1.getHeight()) {
+						// 左の画像を右の画像に入れ替える
+						ofPoint referencePoint;
+						if (enableRandomExchange) {
+								//ランダムで交換
+								referencePoint = ofPoint(exchangeOrderVector[k]%(int)image1.getWidth(), exchangeOrderVector[k]/(int)image1.getWidth());
+						}else{
+								//上から順に交換
+								referencePoint = ofPoint(k%(int)image1.getWidth(), k/(int)image1.getWidth());
+						}
+						// 距離を調べる元になる色
+						ofColor referenceColor = image1.getColor(referencePoint.x, referencePoint.y);
+						// for文の中で見つかった今のところの最小距離を保存しておく
+						double minimumDistance = getColorDistance(ofColor(0, 0, 0), ofColor(255, 255, 255)); // 初期化はgetColorDistance関数で、最大の距離になるもの
+																																																 // for文の中で見つかった今のところの最小点を保存しておく
+						ofPoint minimumDistancePoint(1000, 1000);
+						unsigned char * checkImagePixels = image2.getPixels();
+						// 最小の距離の色を調べる
+						for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+								if (!enableDuplicate) {
+										// 重複を許さない
+										if (!usedOrNotVector[i]) {
+												ofColor checkColor = ofColor(checkImagePixels[i*3],
+																										 checkImagePixels[i*3+1],
+																										 checkImagePixels[i*3+2]);
+												double checkDistance = getColorDistance(referenceColor, checkColor);
+												if (checkDistance < minimumDistance) {
+														minimumDistance = checkDistance;
+														minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
+												}
+										}
+								} else{
+										ofColor checkColor = ofColor(checkImagePixels[i*3],
+																								 checkImagePixels[i*3+1],
+																								 checkImagePixels[i*3+2]);
+										double checkDistance = getColorDistance(referenceColor, checkColor);
+										if (checkDistance < minimumDistance) {
+												if (!usedOrNotVector[i]) {
+														minimumDistance = checkDistance;
+														minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
+												}
+												// 同じ色の重複を許す
+												minimumDistance = checkDistance;
+												minimumDistancePoint = ofPoint(i%(int)image1.getWidth(), i/(int)image1.getWidth());
+										}
+								}
+						}
+						
+						//最も近い距離の色の組み合わせをベクターに保存
+						pointPair tempPointPair;
+						tempPointPair.point1 = referencePoint;
+						tempPointPair.point2 = minimumDistancePoint;
+						
+						// 重複を許さない
+						if (!enableDuplicate) {
+								//再利用しないために、使用したPointを保存
+								usedOrNotVector[minimumDistancePoint.y*(int)image2.getWidth()+minimumDistancePoint.x] = true;
+						}
+						// 最短距離の色のペアを保存
+						pointPairVectorForWriting.push_back(tempPointPair);
+				}
+		}
+		ofLog(OF_LOG_NOTICE, "pointPairVectorForWriting done!");
+		//<-- ペアのデータを作成
+		calucurateFileName = "deleteme/foo_"+ofGetTimestampString()+".dat";
+		exportFileForStruct(pointPairVectorForWriting, calucurateFileName);
+		ofLog(OF_LOG_NOTICE, ofToString("writing file..."));
+		saveToFile = false;
+		ofLog(OF_LOG_NOTICE, ofGetTimestampString()+": done");
+
 }
 
 //--------------------------------------------------------------
@@ -603,9 +639,10 @@ void testApp::exportFile(){
     out.close();
 }
 
-void testApp::exportFileForStruct(vector<pointPair> ppv){
+void testApp::exportFileForStruct(vector<pointPair> ppv, string fileName){
+		// fileName should be like foo.dat
     int count = ppv.size();
-    ofstream out(ofToDataPath("deleteme/foo_"+ofGetTimestampString()+".dat").c_str(),ios::out | ios::binary);
+    ofstream out(ofToDataPath(fileName).c_str(),ios::out | ios::binary);
     if (!out) return 1;
     out.write(reinterpret_cast<const char*>(&count), sizeof(count));
     out.write(reinterpret_cast<const char*>(&ppv[0]), ppv.size() * sizeof(pointPair));
@@ -626,10 +663,11 @@ void testApp::importFile(){
     }
 }
 
-void testApp::importFileForStruct(vector<pointPair> *ppv){
+void testApp::importFileForStruct(vector<pointPair> *ppv, string fileName){
+		// fileName should be like foo.dat
     ppv->clear();
     int count = 0;
-    ifstream in(ofToDataPath("deleteme/foo_2014-05-21-00-25-47-197.dat").c_str(), ios::in | ios::binary);
+    ifstream in(ofToDataPath(fileName).c_str(), ios::in | ios::binary);
     if ( !in ) return ppv;
     in.read(reinterpret_cast<char*>(&count), sizeof(count));
     pointPair pp;
@@ -644,6 +682,7 @@ void testApp::importFileForStruct(vector<pointPair> *ppv){
 void testApp::setupCurrentPointVector(vector<pointPair> ppv){
 		currentPointVector.clear();
 		currentRectRightPointVector.clear();
+		currentRectLeftPointVector.clear();
 		for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
 				currentPointVector[i] = ppv[i].point1;
 				currentRectRightPointVector[i] = ppv[i].point1;

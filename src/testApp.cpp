@@ -53,7 +53,16 @@ void testApp::setup(){
 				//		videoGrabber.setDeviceID(1); // logicool 920を挿した時は、 0 - FaceTime HD Camera (Built-in) / 1 - HD Pro Webcam C920
 				videoGrabber.initGrabber(image2.getWidth(), image2.getHeight());
 		}
+
+		float pixelHeight = ofGetHeight()/image1.getHeight();
+		pixelSize.set(pixelHeight, pixelHeight);
 		
+		//自動化
+		actionTime = 0;
+		didAnimationToExchange = false;
+		didAnimationToOrigin = false;
+		didTakePicture = false;
+		didReadData = false;
 }
 
 //--------------------------------------------------------------
@@ -63,20 +72,55 @@ void testApp::update(){
             counter++;
         }
     }
-
-				//カメラ
-				videoGrabber.update();
-				if (videoGrabber.isFrameNew()) {
-				}
 		
-
+		//カメラ
+		videoGrabber.update();
+		if (videoGrabber.isFrameNew()) {
+		}
+		
+		float timeDifference = ofGetElapsedTimef()-actionTime;
+		if (!didTakePicture && timeDifference > 10) {
+				ofLogNotice("a-"+ofToString(didTakePicture)+ofToString(didReadData)+ofToString(didAnimationToExchange)+ofToString(didAnimationToOrigin));
+				// t
+				image1.clear();
+				usedOrNotVector.assign((int)(image1.getWidth()*image1.getHeight()), false);
+				image1.setFromPixels(videoGrabber.getPixelsRef());
+				image1.mirror(false, true);
+				calucurateAndWrite();
+				didTakePicture = true;
+		}else if (!didReadData && timeDifference > 20){
+				ofLogNotice("b-"+ofToString(didTakePicture)+ofToString(didReadData)+ofToString(didAnimationToExchange)+ofToString(didAnimationToOrigin));
+				readPointPairVector.clear();
+				importFileForStruct(&readPointPairVector, calucurateFileName);
+				didReadData = true;
+		}else if(!didAnimationToExchange && timeDifference > 25){
+				ofLogNotice("c-"+ofToString(didTakePicture)+ofToString(didReadData)+ofToString(didAnimationToExchange)+ofToString(didAnimationToOrigin));
+				animationToExchange = animationToExchange ? false : true;
+				animationToOriginal = animationToExchange ? false : true;
+				setupCurrentPointVector(readPointPairVector);
+				didAnimationToExchange = true;
+		}else if(!didAnimationToOrigin && timeDifference > 50){
+				ofLogNotice("d-"+ofToString(didTakePicture)+ofToString(didReadData)+ofToString(didAnimationToExchange)+ofToString(didAnimationToOrigin));
+				animationToExchange = animationToExchange ? false : true;
+				animationToOriginal = animationToExchange ? false : true;
+				setupCurrentPointVector(readPointPairVector);
+				didAnimationToOrigin = true;
+		}else if (timeDifference > 55){
+				ofLogNotice("e-"+ofToString(didTakePicture)+ofToString(didReadData)+ofToString(didAnimationToExchange)+ofToString(didAnimationToOrigin));
+				didTakePicture = false;
+				didReadData = false;
+				didAnimationToOrigin = false;
+				didAnimationToExchange = false;
+				actionTime = ofGetElapsedTimef();
+		}
+		
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-				ofPushMatrix();
+		ofPushMatrix();
 		if (enableFixFrameExchange) {
-				ofTranslate((ofGetWidth()-image1.getWidth())/2.0, (ofGetHeight()-image1.getHeight())/2.0);
+				ofTranslate((ofGetWidth()-image1.getWidth()*pixelSize.x)/2.0, (ofGetHeight()-image1.getHeight()*pixelSize.y)/2.0);
 		}else{
 				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
 		}
@@ -174,7 +218,7 @@ void testApp::draw(){
 				//        }
 				//
 				//    }
-				if (dataReaded && animationToOriginal) {
+				if (animationToOriginal) {
 						// debug - アニメーションせずに入れ替える。(動いてる模様)
 						//				for (int i=0; i<image1.getHeight(); i++) {
 						//						for (int j=0; j<image1.getWidth(); j++) {
@@ -276,32 +320,45 @@ void testApp::draw(){
 						//				ofTranslate((ofGetWidth()-marginBetweenImages)/2.0-image1.getWidth(), (ofGetHeight()-image1.getHeight())/2.0);
 
 						for (int i=0; i<image1.getWidth()*image1.getHeight(); i++) {
+								ofRect(0, 0, 30, 30);
+								//モナリザのとき
 								// 到達点
-								ofPoint goalPoint;
-								if (enableFixFrameExchange) {
-										goalPoint = ofPoint(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y);
+								//FIXME: ここ？に条件を書く
+								if(didTakePicture && didReadData && !didAnimationToExchange &&!didAnimationToOrigin){
+										// オリジナルを描くだけ
+										ofPoint goalPoint(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y);
+										ofPushStyle();
+										ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
+										// 色を塗る
+										ofRect(goalPoint.x*pixelSize.x, goalPoint.y*pixelSize.x, pixelSize.x, pixelSize.y);
+										ofPopStyle();
 								}else{
-										goalPoint = ofPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
+										ofPoint goalPoint;
+										if (enableFixFrameExchange) {
+												goalPoint = ofPoint(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y);
+										}else{
+												goalPoint = ofPoint(readPointPairVector[i].point2.x+image1.getWidth()+marginBetweenImages, readPointPairVector[i].point2.y);
+										}
+										// x軸
+										if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
+												currentRectRightPointVector[i].x++;
+										}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
+												currentRectRightPointVector[i].x--;
+										}
+										// y軸
+										if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
+												currentRectRightPointVector[i].y++;
+										}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
+												currentRectRightPointVector[i].y--;
+										}
+										
+										ofPushStyle();
+										ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
+										// 色を塗る
+										// 左から右
+										ofRect(currentRectRightPointVector[i].x*pixelSize.x, currentRectRightPointVector[i].y*pixelSize.x, pixelSize.x, pixelSize.y);
+										ofPopStyle();
 								}
-								// x軸
-								if (goalPoint.x-currentRectRightPointVector[i].x > 0) {
-										currentRectRightPointVector[i].x++;
-								}else if(goalPoint.x-currentRectRightPointVector[i].x < 0){
-										currentRectRightPointVector[i].x--;
-								}
-								// y軸
-								if (goalPoint.y-currentRectRightPointVector[i].y > 0) {
-										currentRectRightPointVector[i].y++;
-								}else if(goalPoint.y-currentRectRightPointVector[i].y < 0){
-										currentRectRightPointVector[i].y--;
-								}
-								
-								ofPushStyle();
-								ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
-								// 色を塗る
-								// 左から右
-								ofRect(currentRectRightPointVector[i].x, currentRectRightPointVector[i].y, 1, 1);
-								ofPopStyle();
 						}
 
 						if (!enableFixFrameExchange) {
@@ -379,6 +436,7 @@ void testApp::draw(){
 						
 				}
 				if (animationToExchange) {
+						ofCircle(0, 0, 10);
 						// 1ピクセルの四角形での描画
 						// x軸,y軸それぞれ1個ずつ動くやりかた
 						// 左から右(オリジナルから交換版への移行)
@@ -429,7 +487,7 @@ void testApp::draw(){
 								ofPushStyle();
 								ofSetColor(image2.getColor(readPointPairVector[i].point2.x, readPointPairVector[i].point2.y));
 								// 色を塗る
-								ofRect(currentRectLeftPointVector[i].x, currentRectLeftPointVector[i].y, 1, 1);
+								ofRect(currentRectLeftPointVector[i].x*pixelSize.x, currentRectLeftPointVector[i].y*pixelSize.y, pixelSize.x, pixelSize.y);
 								ofPopStyle();
 						}
 						//				ofPopMatrix();
@@ -509,7 +567,7 @@ void testApp::keyReleased(int key){
             //read file
 						readPointPairVector.clear();
             importFileForStruct(&readPointPairVector, calucurateFileName);
-            setupCurrentPointVector(readPointPairVector);
+//            setupCurrentPointVector(readPointPairVector);
 //            for (int i=0; i<image1.getHeight(); i++) {
 //                for (int j=0; j<image1.getWidth(); j++) {
 //                    image1.setColor(readPointPairVector[i*(int)image1.getWidth()+j].point1.x,
@@ -518,7 +576,7 @@ void testApp::keyReleased(int key){
 //                                                    readPointPairVector[i*(int)image1.getWidth()+j].point2.y));
 //                }
 //            }
-						dataReaded = true;
+//						dataReaded = true;
             break;
         case 's':
             ofDisableAntiAliasing();

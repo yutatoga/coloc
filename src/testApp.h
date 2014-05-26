@@ -72,4 +72,14 @@ public:
 		//カメラ入力を準備
     ofVideoGrabber videoGrabber;
 		string calucurateFileName;
+		
+		//ピクセルのサイズ
+		ofVec2f pixelSize;
+		
+		// 自動化
+		float actionTime;
+		bool didTakePicture;
+		bool didReadData;
+		bool didAnimationToExchange;
+		bool didAnimationToOrigin;
 };

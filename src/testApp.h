@@ -82,4 +82,7 @@ public:
 		bool didReadData;
 		bool didAnimationToExchange;
 		bool didAnimationToOrigin;
+		
+		// for installation
+		bool cursorVisible;
 };
